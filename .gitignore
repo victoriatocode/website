@@ -1,0 +1,27 @@
+# macOS / system
+.DS_Store
+
+# Editor / tooling state
+.vscode/
+.claude/
+.idea/
+
+# Python build / virtualenv
+.venv/
+__pycache__/
+*.pyc
+
+# Local build / analysis scripts (not used by the live site)
+analyze_publications.py
+analyze_publications-2.py
+assemble.py
+newspaper_strip.py
+newspaper_strip.html
+scripts/
+
+# Inspiration / archived material (not deployed)
+inspo/
+imported/
+
+# Logs / misc
+*.log

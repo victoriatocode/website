@@ -1,0 +1,38 @@
+[
+  {
+    "id": 4,
+    "year": 2025,
+    "title": "Intersections of Sexual Violence and Anti-Asian Racism among ANHPI College Students",
+    "venue": "American Public Health Association Annual Meeting",
+    "abstract": "Presentation of mixed-methods findings from the Double Jeopardy Study examining sexual violence and anti-Asian racism among ANHPI students.",
+    "research_areas": ["Gender-Based Violence", "Sexual & Reproductive Health", "Structural Determinants"],
+    "url": null
+  },
+  {
+    "id": 3,
+    "year": 2024,
+    "title": "Structural Barriers to Prenatal Care in the Context of Maternal Substance Use",
+    "venue": "Society for Epidemiologic Research Annual Conference",
+    "abstract": "Qualitative findings exploring how substance use and policy environments shape prenatal care access.",
+    "research_areas": ["Maternal & Reproductive Health", "Substance Use & Policy", "Structural Determinants"],
+    "url": null
+  },
+  {
+    "id": 2,
+    "year": 2023,
+    "title": "Policy Environments and Congenital Syphilis Prevention: Qualitative Findings from California and Louisiana",
+    "venue": "American Public Health Association Annual Meeting",
+    "abstract": "Findings on patient-provider relationships and system gaps relevant to congenital syphilis prevention.",
+    "research_areas": ["HIV/STIs", "Maternal & Reproductive Health", "Structural Determinants"],
+    "url": null
+  },
+  {
+    "id": 1,
+    "year": 2022,
+    "title": "Examining Masculinities to Inform Gender-Transformative Violence Prevention Programs",
+    "venue": "International Conference on Violence Prevention",
+    "abstract": "Qualitative study from Rakai, Uganda on masculinities and implications for violence prevention.",
+    "research_areas": ["Gender-Based Violence", "Structural Determinants"],
+    "url": null
+  }
+]

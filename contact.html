@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Eunhee Victoria Park</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/shell.css" />
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-block {
+      margin-bottom: 2rem;
+    }
+
+    .contact-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.7rem;
+    }
+
+    .contact-value {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: #333;
+    }
+
+    .contact-value a {
+      color: var(--black);
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      transition: border-color .15s;
+    }
+
+    .contact-value a:hover {
+      border-color: var(--black);
+    }
+
+    @media (max-width: 640px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <link rel="icon" href="parklogo.png" type="image/png">
+</head>
+
+<body>
+  <main class="content">
+      <div class="sec-masthead">
+        <h1 class="sec-masthead-title">Contact</h1>
+        <span class="sec-masthead-num">Get in Touch</span>
+      </div>
+      <div class="page-body">
+
+        <hr class="section-rule" />
+        <div class="contact-grid">
+          <div>
+            <div class="contact-block">
+              <p class="contact-label">Email</p>
+              <p class="contact-value"><a href="mailto:eunhee.park@gwu.edu">eunhee.park@gwu.edu</a></p>
+            </div>
+            <div class="contact-block">
+              <p class="contact-label">Mailing Address</p>
+              <p class="contact-value">
+                Eunhee Victoria Park, Ph.D., M.P.H.<br>
+                Postdoctoral Scholar<br>
+                Primary Care Research Training Program<br>
+                School of Medicine &amp; Health Sciences<br>
+                The George Washington University<br>
+                2600 Virginia Ave. NW, Suite 356<br>
+                Washington, DC 20052
+              </p>
+            </div>
+            <div>
+              <div class="contact-block">
+                <p class="contact-label">Online</p>
+                <p class="contact-value">
+                  <a href="https://scholar.google.com/citations?user=j5awDa4AAAAJ&hl=en" target="_blank">Google Scholar
+                    ↗</a><br>
+                  <a href="https://www.linkedin.com/in/eunheevpark/" target="_blank">LinkedIn ↗</a><br>
+                </p>
+              </div>
+              <div class="contact-block">
+                <p class="contact-label">Curriculum Vitae</p>
+                <p class="contact-value">
+                  <a href="cv/CV_JAN2026.pdf" target="_blank">Download CV (Jan 2026) ↗</a><br>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+  </main>
+</body>
+
+</html>

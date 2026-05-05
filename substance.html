@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Substance Use — Eunhee Victoria Park</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=Public+Sans:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/shell.css" />
+  <style>
+    .page-body {
+      max-width: none;
+      width: 100%;
+    }
+
+    .sec-masthead-title {
+      font-family: var(--sans);
+      font-weight: 600;
+    }
+
+    .entry-note {
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.3;
+      color: var(--black);
+      border-left: 3px solid #2e7d32;
+      padding: 0.4rem 0 0.4rem 1.2rem;
+      margin: 0.7rem 0 1.6rem;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .narrative {
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.3;
+      color: var(--black);
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .narrative p {
+      width: 100%;
+      max-width: 100%;
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.3;
+      margin: 0 0 1rem;
+    }
+
+    .narrative p:last-child {
+      margin-bottom: 0;
+    }
+
+    .narrative strong {
+      font-weight: 500;
+    }
+
+    .page-body h2.work-title,
+    h2.work-title {
+      font-family: 'Public Sans', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: normal;
+      text-transform: none;
+      color: var(--black);
+      margin: 1rem 0 1rem;
+    }
+
+    .work-meta {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      color: var(--mid);
+      margin: 0 0 1.4rem;
+      line-height: 1.7;
+    }
+
+    .work-meta a { color: var(--mid); }
+
+    .work-meta .pill {
+      display: inline-block;
+      padding: 0.18rem 0.55rem;
+      border: 1px solid #2e7d32;
+      color: #2e7d32;
+      border-radius: 2px;
+      margin-right: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.6rem;
+    }
+    
+    .work-tags {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .work-tag {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
+    }
+
+    .future-works {
+      margin: 3rem 0 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .future-heading {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin: 0 0 1.2rem;
+    }
+
+    .future-intro {
+      font-family: var(--sans);
+      font-size: 19px;
+      line-height: 1.6;
+      color: var(--black);
+      margin: 0 0 2rem;
+      max-width: 100%;
+    }
+
+    .spectrum {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin: 1rem 0 0.8rem;
+      position: relative;
+    }
+
+    .spectrum-col {
+      padding: 1rem 1.1rem 1.1rem;
+      border: 1px solid var(--rule);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      min-width: 0;
+    }
+
+    .spectrum-name {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--black);
+    }
+
+    .spectrum-desc {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--mid);
+      margin: 0;
+    }
+
+    .spectrum-axis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 0.8rem;
+      align-items: center;
+      position: relative;
+    }
+
+    .spectrum-axis::before {
+      content: "";
+      position: absolute;
+      left: 1.1rem;
+      right: 1.1rem;
+      top: 50%;
+      height: 1px;
+      background: linear-gradient(to right, var(--rule), #2e7d32);
+      z-index: 0;
+    }
+
+    .spectrum-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      background: var(--white, #fff);
+      padding: 0.25rem 0.5rem;
+      justify-self: center;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .spectrum,
+      .spectrum-axis {
+        grid-template-columns: 1fr;
+      }
+      .spectrum-axis::before { display: none; }
+    }
+  </style>
+  <link rel="icon" href="parklogo.png" type="image/png">
+</head>
+
+<body>
+  <main class="content">
+    <div class="sec-masthead">
+      <h1 class="sec-masthead-title">Substance Use</h1>
+      <span class="sec-masthead-num">Women's Health</span>
+    </div>
+
+    <div class="page-body">
+
+      <p class="entry-note">
+        Substance use during pregnancy is one of the places where stigma and policy do the most quiet damage. People stop disclosing, providers stop asking, and the data we rely on stop describing real experience. My current work asks whether large-scale digital traces, paired with multiple large language models as a kind of triangulated qualitative team, can surface what surveillance and clinic data miss.
+      </p>
+
+      <p class="work-meta">
+        <span class="pill">Postdoctoral &middot; Current &middot; Ongoing</span>
+        <span class="pill">Submitted to APHA 2026</span>
+      </p>
+
+      <h2 class="work-title">Qualitative Assessment of Substance Use&ndash;Related Perinatal Health Needs in Reddit Discourse Using Multiple Large Language Models (LLM): A Proof-of-Concept Study</h2>
+      <div class="narrative">
+        <strong>Introduction</strong> 
+        <p>Substance use presents unique barriers to prenatal care. Stigma and punitive policy environments discourage disclosure and deter care-seeking among pregnant people, and traditional public health surveillance and clinical data offer only a partial picture of how people actually navigate substance use and the health needs that surround it in real time. Social media platforms such as Reddit fill some of that gap, where anonymity and peer community lower the barriers to self-disclosure that clinical encounters tend to raise.</p>
+        <strong>Methods</strong>
+        <p>This proof-of-concept study uses multi-LLM consensus annotation to classify self-reported perinatal experiences in a Reddit corpus assembled from five pregnancy- and substance-use-related subreddits between 2020 and 2024, yielding two million comments. From a random sample of 5,000 posts, three local LLMs (Llama 3.3-70B, GPT-OSS-20B, and Qwen3-30B) independently annotated each post for self-disclosure. The 1,370 posts (27.4%) that reached full three-model consensus were retained as a high-precision label set, and 309 explicit self-report posts were carried into thematic analysis with Claude Sonnet 4.6 and human review.</p>
+        <strong>Results</strong>
+        <p>Medication-use concerns and healthcare-system navigation challenges co-occurred frequently, with insurance barriers and provider communication difficulties showing up together. Across the corpus, a cross-cutting pattern of clinical dismissal emerged. Reddit was functioning as both an emotional support network and an alternative health information source for pregnant people who felt unheard inside medical care.</p>
+        <strong>Conclusion</strong>
+        <p>Multi-LLM consensus annotation with human-in-the-loop validation looks like a feasible, cost-efficient, and scalable way to identify unmet prenatal health needs from large-scale social media data, surfacing attitudes and beliefs that are routinely underreported in clinical settings. These findings establish the protocol for a full-corpus analysis of substance-use-related barriers and inform communication and outreach strategies for reaching pregnant people who are not engaged in adequate care.</p>
+            <p> <em>Methodological note: Extends a line of Reddit-based public health surveillance 
+            developed in the Broniatowski lab at GW. Collaborator <strong>Dian Hu, PhD</strong> (Systems Engineering, GW; postdoctoral, University of Maryland) brings 
+            nearly a decade of expertise in social media data pipelines and NLP for health discourse.</em>
+        </p>  
+    </div>
+
+      <div class="work-tags">
+        <span class="work-tag">Perinatal</span>
+        <span class="work-tag">Substance Use</span>
+        <span class="work-tag">Reddit Corpus</span>
+        <span class="work-tag">Multi-LLM</span>
+        <span class="work-tag">Thematic Analysis</span>
+        <span class="work-tag">Health Communication</span>
+      </div>
+<br>
+    <h2 class="work-title">Future Works</h2>
+    <div class="narrative">
+        In the coming years, my substance use research will draw on three complementary data infrastructures: digital self-disclosure on Reddit, local clinical intervention trial data, and national longitudinal data. 
+        The goal is to use these together to surface unmet needs that any single data source would miss, and to inform care models and outreach that meet pregnant people where they actually are.
+    </div>      
+        <div class="spectrum">
+          <div class="spectrum-col">
+            <span class="spectrum-name">Reddit</span>
+            <p class="spectrum-desc">~2 million comments<br>2020&ndash;2024</p>
+          </div>
+          <div class="spectrum-col">
+            <span class="spectrum-name">Clinical RCT</span>
+            <p class="spectrum-desc">RCT<br>GWU + Children&rsquo;s National</p>
+          </div>
+          <div class="spectrum-col">
+            <span class="spectrum-name">HBCD</span>
+            <p class="spectrum-desc">HEALthy Brain &amp; Child Development<br>NIH Study</p>
+          </div>
+        </div>
+
+        <div class="spectrum-axis">
+          <span class="spectrum-label">Lay digital voice</span>
+          <span class="spectrum-label">Local clinical</span>
+          <span class="spectrum-label">National longitudinal</span>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</body>
+
+</html>

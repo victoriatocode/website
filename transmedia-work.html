@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transmedia Work — Eunhee Victoria Park</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/shell.css" />
+  <style>
+    .lead {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--black);
+      border-left: 3px solid #2e7d32;
+      padding: 0.4rem 0 0.4rem 1.2rem;
+      margin: 0.5rem 0 1.6rem;
+      max-width: 100%;
+    }
+
+    .lead a {
+      color: var(--black);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .site-preview {
+      display: block;
+      max-width: 1000px;
+      border: 1px solid var(--rule);
+      background: #fff;
+      overflow: hidden;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .site-preview:hover {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .site-preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .visit-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--mid);
+      padding-bottom: 2px;
+    }
+
+    .visit-link:hover { border-color: var(--black); }
+  </style>
+  <link rel="icon" href="parklogo.png" type="image/png">
+</head>
+
+<body>
+  <main class="content">
+    <div class="sec-masthead">
+      <h1 class="sec-masthead-title">Transmedia Work</h1>
+      <span class="sec-masthead-num">Double Jeopardy Study</span>
+    </div>
+    <div class="page-body">
+      <p class="lead">
+        Companion site for the Double Jeopardy Study, hosted at <a href="https://ucspeaksup.org/djstudy/" target="_blank" rel="noopener">ucspeaksup.org/djstudy</a>. Click the preview to open the full site.
+      </p>
+
+      <a class="site-preview" href="https://ucspeaksup.org/djstudy/" target="_blank" rel="noopener" aria-label="Open ucspeaksup.org/djstudy in a new tab">
+        <img src="img_assets/djwebsite.png" alt="Screenshot of the UC Speaks Up Double Jeopardy Study site" loading="lazy" />
+      </a>
+
+      <a class="visit-link" href="https://ucspeaksup.org/djstudy/" target="_blank" rel="noopener">Visit ucspeaksup.org/djstudy ↗</a>
+    </div>
+  </main>
+</body>
+
+</html>

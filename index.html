@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eunhee Victoria Park</title>
+  <meta name="description" content="Eunhee Victoria Park is a social epidemiologist studying how structural vulnerability and syndemic risk shape prenatal care access and preventable mother-to-child transmission of infections, including congenital syphilis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/shell.css" />
+  <link rel="icon" href="parklogo.png" type="image/png">
+</head>
+
+<body>
+  <button class="m-btn" id="mBtn"><span></span><span></span><span></span></button>
+
+  <div class="shell">
+    <!-- ── SIDEBAR NAV ── -->
+    <nav class="nav" id="nav">
+      <a href="home.html" target="content-frame" style="color:inherit;text-decoration:none;display:block;">
+        <div class="nav-name">Eunhee <em>Victoria</em> Park</div>
+      </a>
+      <div class="nav-cred">Ph.D., M.P.H.</div>
+
+
+      <div class="nav-group">
+        <ul>
+
+          <li><a href="info.html" target="content-frame">Info-></a></li>
+
+          <li>
+            <span class="nav-heading">Women's Health</span>
+            <ul class="nav-sub nav-sub-dotted">
+              <li><a href="substance.html" target="content-frame">Substance+Pregnancy</a></li>
+              <li><a href="substi.html" target="content-frame">Substance+STI</a></li>
+              <li><a href="sti.html" target="content-frame">STI</a></li>
+              <li><a href="hiv.html" target="content-frame">HIV</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <span class="nav-heading">Double Jeopardy Study</span>
+            <ul class="nav-sub nav-sub-dotted">
+              <li><a href="concept-paper.html" target="content-frame">Concept Brief</a></li>
+              <li><a href="study-protocol.html" target="content-frame">Study Protocol</a></li>
+              <li><a href="perspective.html" target="content-frame">Perspective</a></li>
+              <li><a href="navigating-silence.html" target="content-frame">Navigating Silence</a></li>
+              <li><a href="policy-brief.html" target="content-frame">Policy Brief</a></li>
+              <li><a href="exhibit.html" target="content-frame">Voices on Silk</a></li>
+              <li><a href="transmedia-work.html" target="content-frame">Transmedia Work</a></li>
+            </ul>
+          </li>
+          <li>
+            <span class="nav-heading">Gender Based Violence</span>
+            <ul class="nav-sub nav-sub-dotted">
+              <li><a href="higher-ed.html" target="content-frame">Higher Ed</a></li>
+              <li><a href="community.html" target="content-frame">Sub-Saharan Africa</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <span class="nav-heading">Publications</span>
+            <ul class="nav-sub nav-sub-dotted">
+              <li><a href="publications.html" target="content-frame">List</a></li>
+              <li><a href="visualization.html" target="content-frame">Preview</a></li>
+              <li><a href="topic-cluster.html" target="content-frame">Topic Cluster</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <span class="nav-heading">Talks</span>
+            <ul class="nav-sub nav-sub-dotted">
+              <li><a href="conferences.html" target="content-frame">Conferences</a></li>
+              <li><a href="talks.html" target="content-frame">Invited Talks</a></li>
+            </ul>
+          </li>
+
+      <div class="nav-bottom">
+        <a href="mailto:eunhee.park@gwu.edu">Email</a>
+        <a href="https://www.linkedin.com/in/eunheevpark/" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=j5awDa4AAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <p class="nav-copy">&copy; <span id="year"></span> Eunhee Victoria Park</p>
+        <p class="nav-credit">
+         Writing and site design are my own; code developed with Claude Code (Anthropic).</p>
+      </div>
+    </nav>
+
+    <!-- ── CONTENT FRAME ── -->
+    <iframe id="content-frame" name="content-frame" src="home.html"></iframe>
+  </div>
+
+  <script src="js/shell.js"></script>
+  <script src="js/nav-pubs.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Update active nav link when content frame navigates
+    const frame = document.getElementById('content-frame');
+    const navLinks = document.querySelectorAll('.nav-group a');
+
+    function updateActive() {
+      try {
+        const src = frame.contentWindow.location.href;
+        const fname = src.split('/').pop().split('?')[0].split('#')[0];
+        navLinks.forEach(a => {
+          const href = a.getAttribute('href');
+          a.classList.toggle('active', href === fname || (fname === '' && href === 'home.html'));
+        });
+      } catch (e) {
+        // cross-origin or inaccessible — ignore
+      }
+    }
+
+    frame.addEventListener('load', updateActive);
+    updateActive();
+  </script>
+</body>
+</html>

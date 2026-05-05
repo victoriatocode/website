@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Info — Eunhee Victoria Park</title>
+  <meta name="description" content="Eunhee Victoria Park is a postdoctoral fellow and social epidemiologist studying how structural and policy environments shape maternal and reproductive health inequities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/shell.css" />
+  <style>
+    html, body { height: 100%; }
+
+    .content {
+      height: 100%;
+      overflow-y: auto;
+      background: var(--white);
+      padding: 0.75rem;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .top-row {
+      display: flex;
+      align-items: stretch;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .headshot {
+      width: clamp(220px, 50%, 520px);
+      flex-shrink: 0;
+      height: auto;
+      display: block;
+    }
+
+    .bio {
+      font-family: 'Public Sans', sans-serif;
+      font-size: clamp(15px, 1.05vw + 11px, 18px);
+      line-height: 1.5;
+      color: var(--black);
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 720px) {
+      .top-row {
+        gap: 1rem;
+      }
+
+      .headshot {
+        width: 100%;
+      }
+    }
+
+    .bio a {
+      color: var(--black);
+      text-decoration: underline;
+    }
+
+    .statement-heading {
+      font-family: 'Public Sans', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: normal;
+      text-transform: none;
+      color: var(--black);
+      margin: 1rem 0 1rem;
+    }
+
+    .statement {
+      font-family: 'Public Sans', sans-serif;
+      font-size: clamp(15px, 1.05vw + 11px, 18px);
+      line-height: 1.55;
+      color: var(--black);
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 2.5rem;
+    }
+
+    .statement p {
+      margin-bottom: 1rem;
+    }
+
+    .statement p:last-child {
+      margin-bottom: 0;
+    }
+
+    .inline-mark {
+      display: inline-block;
+      vertical-align: -0.45em;
+      width: 1.8em;
+      height: 1.8em;
+      margin-right: 0.4em;
+    }
+
+    .links {
+      list-style: none;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .links li {
+      margin-bottom: 0.1rem;
+    }
+
+    .links a {
+      font-family: 'Public Sans', sans-serif;
+      font-size: 17px;
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .training-context {
+      display: flex;
+      gap: 2.4rem;
+      align-items: center;
+      justify-content: center;
+      padding: 1.4rem 0 1.6rem;
+      margin: 1.4rem 0 1.6rem;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 100%;
+      text-align: left;
+    }
+
+    .triangle-mark { flex-shrink: 0; width: 150px; height: 140px; }
+    .triangle-mark .edge { fill: none; stroke: var(--rule); stroke-width: 1; }
+    .triangle-mark .vertex { fill: var(--black); }
+    .triangle-mark .core { fill: #2e7d32; }
+    .triangle-mark text {
+      font-family: var(--mono);
+      font-size: 7px;
+      fill: var(--mid);
+      letter-spacing: 1px;
+    }
+
+    .training-text { flex: 1; min-width: 280px; }
+
+    .training-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mid);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .training-program {
+      font-family: 'Public Sans', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--black);
+      margin: 0 0 1.1rem;
+      line-height: 1.4;
+    }
+
+    .mentor-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .mentor-list li {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 1rem;
+      align-items: baseline;
+      font-family: 'Public Sans', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .mentor-role {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding-top: 2px;
+    }
+
+    .mentor-name { font-weight: 500; color: var(--black); }
+    .mentor-discipline { color: var(--mid); }
+
+    @media (max-width: 720px) {
+      .training-context { gap: 1.4rem; }
+      .triangle-mark { width: 110px; height: 105px; }
+      .mentor-list li { grid-template-columns: 1fr; gap: 0.1rem; }
+      .mentor-role { padding-top: 0; }
+    }
+  </style>
+  <link rel="icon" href="parklogo.png" type="image/png">
+</head>
+
+<body>
+  <main class="content">
+
+    <div class="top-row">
+      <img class="headshot" src="img_assets/Eunhee Headshot.png" alt="Portrait of Eunhee Victoria Park" />
+      <ul class="links">
+      <li><a href="mailto:eunhee.park@gwu.edu">eunhee.park@gwu.edu→</a></li>
+      <li><a href="cv/CV_JAN2026.pdf" target="_blank" rel="noopener">CV→</a></li>
+      <li><a href="https://scholar.google.com/citations?user=j5awDa4AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar→</a></li>
+      <li><a href="https://www.ncbi.nlm.nih.gov/myncbi/eunhee.park.3/bibliography/public/" target="_blank" rel="noopener">PubMed→</a></li>
+      <li><a href="https://www.researchgate.net/profile/Eunhee-Park-10" target="_blank" rel="noopener">Research Gate→</a></li>
+      <li><a href="https://orcid.org/0000-0001-6442-8119" target="_blank" rel="noopener">ORCiD→</a></li>
+      <li><a href="https://www.linkedin.com/in/eunheevpark/" target="_blank" rel="noopener">Linkedin→</a></li>
+      </ul>
+    </div>
+
+    <p class="bio">
+      Eunhee Victoria Park is a public health scientist examining sexual and reproductive health across women's lifespan. She is a 
+      postdoctoral fellow in the <a href="https://pcart.smhs.gwu.edu/p-cart-fellows" target="_blank" rel="noopener">Primary Care Research Training Program (HRSA T32)</a> at the George Washington University 
+      School of Medicine and Health Sciences. She focuses on how structural and policy environments shape maternal, reproductive, 
+      and sexual health, with a particular emphasis on prenatal care access, syndemics of substance use, violence, and HIV/STIs.
+    </p>
+
+    <div class="training-context">
+      <svg class="triangle-mark" viewBox="0 0 150 140" xmlns="http://www.w3.org/2000/svg" aria-label="Three mentor disciplines: public health, engineering, and clinical research, with the postdoc role at the center.">
+        <polygon class="edge" points="75,22 138,118 12,118" />
+        <circle class="vertex" cx="75" cy="22" r="3" />
+        <circle class="vertex" cx="138" cy="118" r="3" />
+        <circle class="vertex" cx="12" cy="118" r="3" />
+        <image href="parklogo.png" x="55" y="66" width="40" height="40" preserveAspectRatio="xMidYMid meet" />
+        <text x="75" y="13" text-anchor="middle">PUBLIC HEALTH</text>
+        <text x="138" y="133" text-anchor="end">CLINICAL</text>
+        <text x="12" y="133" text-anchor="start">ENGINEERING</text>
+      </svg>
+
+      <div class="training-text">
+        <span class="training-eyebrow">HRSA National Research Service Award &middot; Two-year postdoctoral fellowship</span>
+        <p class="training-program">Primary Care Research Training, George Washington University</p>
+        <ul class="mentor-list">
+          <li>
+            <span class="mentor-role">Primary Mentor</span>
+            <span><span class="mentor-name">Monica Ruiz, PhD</span> &middot; <span class="mentor-discipline">Prevention and Community Health</span></span>
+          </li>
+          <li>
+            <span class="mentor-role">Co-Mentor</span>
+            <span><span class="mentor-name">David Broniatowski, PhD</span> &middot; <span class="mentor-discipline">Engineering</span></span>
+          </li>
+          <li>
+            <span class="mentor-role">T32 Mentor</span>
+            <span><span class="mentor-name">Trudy Mallinson, PhD</span> &middot; <span class="mentor-discipline">Clinical Research</span></span>
+          </li>
+          <li>
+            <span class="mentor-role">Consulting Mentor</span>
+            <span><span class="mentor-name">LaQuandra S. Nesbitt, MD, MPH</span> &middot; <span class="mentor-discipline">Clinical Research</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="bio">
+      Using mixed-methods approaches, Eunhee studies the pathways through which policies, institutional practices, and social meanings
+      translate into health behaviors and outcomes. Her doctoral research was supported by the <a href="https://reporter.nih.gov/search/An0CJIDqikOzHPaHgFlzqA/project-details/10947069" target="_blank" rel="noopener">NIH F31 National Research Service Award (NRSA) from
+      the National Institute on Drug Abuse (NIDA)</a>. The work examined how intersecting structural factors, including 
+      substance use criminalization, housing instability, and healthcare system barriers shape prenatal engagement and congenital syphilis risk.
+      <br><br>
+      In addition, Eunhee has led the <a href="https://ucspeaksup.org/djstudy/" target="_blank" rel="noopener">Double Jeopardy Study</a> and <a href="exhibit.html">transmedia work and exhibitions</a> on sexual violence on college campuses as a Co-Principal Investigator, with
+      funding support from AAPI Data, the Center for Institutional Courage, the UCLA Center for the Study of Women & Barbra Streisand Center, and the UCLA Asian American Studies 
+      Center. She has also received training support from the <a href="https://www.uclahealth.org/departments/medicine/medicine-pediatrics/education/maternal-child-health-center-excellence/current-trainees-alumni/eunhee-park-phd-student" target="_blank" rel="noopener">UCLA Maternal and Child Health Center of Excellence</a> and the UCLA Academic Senate.
+      <br><br>
+      Eunhee earned her Ph.D. in Community Health Sciences from the University of California, Los Angeles, 
+      an M.P.H. in Social and Behavioral Sciences from the University of Hawaii at Mānoa, 
+      and a B.A. in Political Science and International Relations with a Minor in English Language and Literature from Sookmyung Women’s 
+      University in Seoul, South Korea. She was the graduate degree fellow at the East-West Center. She has 10 years of professional experience in various academic 
+      institutions collaborating on global health projects with partners from Zambia, Uganda, Tanzania, South Africa, Nepal, Vietnam, Fiji, etc.
+    </p>
+
+    <h1 class="statement-heading">Statement</h1>
+    <div class="statement">
+      <p>I am captivated by the ways women are taught to interpret their own bodies, and how this shapes whether and when they reach for care. Central to my work is a critique of the social and institutional systems that produce health by deciding whose pain is legible, whose risk is named, and whose silence is treated as consent. What are the rules women learn about their own worth in clinical, familial, and digital spaces, and what happens when those rules break down?</p>
+      <p>I conduct studies that invite women to speak about what is rarely asked: experiences of intimate partner violence, sexual violence, substance use during pregnancy, the daily calculations that determine whether a health care is possible this week. In these encounters, both researcher and participant take on a reciprocal vulnerability, as the questions reach into spaces shaped by fear, blame, and stigma. </p>
+      <p>I work with interviews, focus groups, population-level surveys, surveillance data, and social media, drawing on Reproductive Justice and syndemic frameworks alongside statistical methods and large language models. My work moves between scales, from the intimate texture of a single narrative to the structural patterns visible only across thousands of records. There are different layers of evidence, each one illuminating what the others cannot.</p>
+      <p>Each study feels like an attempt to close the distance between what we measure and how women live. I am tracing the gap between the clinical category and the life experiences, between the screening question and the answer that cannot be given. Who decides what counts as care, and what values are encoded in our guidelines and risk scores? Who is screened, referred, treated, and who is quietly turned away?</p>
+      <p>Through this work, I seek to make women's health less costly, less bound to fear, pain, discomfort, time, blame, and stigma, and more legible at the community level where modifiable risks can be addressed before harm accumulates.</p>
+      
+      <p><img class="inline-mark" src="parklogo.png" alt="" /> 
+      The mark you see on this site is the character &#26420; (<em>Bak</em> / <em>Park</em>) is my family name. 
+      It is a single tree against a simple stroke, and it carries the meaning of <em>simple, plain, and humility</em>. 
+      I keep it as a signature because it reminds me of the kind of work I want to 
+      do that is close to its source, and honest about what is there.</p>
+    </div>
+
+  </main>
+</body>
+</html>

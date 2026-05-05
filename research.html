@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Eunhee Victoria Park</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Source+Serif+4:opsz,wght@8..60,300;8..60,500&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/shell.css" />
+  <style>
+    :root {
+      --pub-bg: #2f1f14;
+      --pub-panel: #3d2a1d;
+      --pub-card: #4a3425;
+      --pub-rule: var(--rule);
+      --pub-text: var(--black);
+      --pub-muted: #666;
+      --pub-accent: #ad7a49;
+      --strand-maternal: #e8a44a;
+      --strand-gbv: #c27466;
+      --strand-structural: #8aab7c;
+      --strand-global: #6d9ab5;
+    }
+
+    .content {
+      background: var(--white);
+      min-height: 100vh;
+    }
+
+    .sec-masthead {
+      align-items: baseline;
+      border-bottom: 1px solid var(--pub-rule);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+    }
+
+    .sec-masthead-title {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--pub-text);
+    }
+
+    .sec-masthead-num {
+      color: var(--pub-muted);
+      border-color: var(--pub-rule);
+      font-family: var(--mono);
+    }
+
+    .page-body {
+      max-width: unset;
+      padding: 1rem 2rem 2rem 3rem;
+      color: var(--pub-text);
+    }
+
+    .deck {
+      max-width: 980px;
+      margin-bottom: 1.15rem;
+      font: 300 0.96rem/1.34 'Source Serif 4', serif;
+      color: #f0dfc9;
+    }
+
+    .topic-note {
+      max-width: 980px;
+      margin: -0.52rem 0 0.75rem;
+      color: var(--pub-muted);
+      font: 400 0.62rem/1.32 var(--mono);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .topic-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0 0 0.68rem;
+    }
+
+    .topic-btn {
+      border: 1px solid var(--pub-rule);
+      background: rgba(255, 238, 212, 0.05);
+      color: var(--pub-muted);
+      font: 400 0.58rem/1 var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.38rem 0.52rem;
+      cursor: pointer;
+      transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .topic-btn:hover,
+    .topic-btn:focus-visible {
+      border-color: #c79868;
+      color: var(--pub-text);
+      outline: none;
+    }
+
+    .topic-btn.active {
+      background: rgba(255, 215, 163, 0.12);
+      border-color: #e9bc8b;
+      color: #ffe5c4;
+    }
+
+    .status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 0.62rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--pub-muted);
+    }
+
+    .matrix-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 0.6rem;
+      padding: 0.45rem 0;
+      border-bottom: 0.5px solid rgba(255, 214, 160, 0.15);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.32rem;
+      padding: 0.2rem 0.32rem;
+      border: 0.5px solid rgba(255, 214, 160, 0.22);
+      background: rgba(255, 235, 204, 0.03);
+      cursor: pointer;
+      transition: border-color 0.12s ease, background-color 0.12s ease, opacity 0.12s ease;
+      user-select: none;
+      opacity: 0.85;
+    }
+
+    .legend-item:hover,
+    .legend-item:focus-visible {
+      border-color: rgba(255, 214, 160, 0.45);
+      opacity: 1;
+      outline: none;
+    }
+
+    .legend-item.active {
+      border-color: rgba(255, 214, 160, 0.72);
+      background: rgba(255, 235, 204, 0.08);
+      opacity: 1;
+    }
+
+    .legend-swatch {
+      width: 8px;
+      height: 8px;
+      border-radius: 1px;
+      flex-shrink: 0;
+    }
+
+    .legend-label {
+      font: 400 0.54rem/1 var(--mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--pub-muted);
+    }
+
+    .matrix-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    .matrix-row {
+      transition: background-color 0.12s ease;
+    }
+
+    .matrix-row:hover {
+      background: rgba(255, 232, 198, 0.04);
+    }
+
+    .matrix-row.dim {
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .matrix-row.selected {
+      background: var(--row-heat, rgba(255, 232, 198, 0.08));
+      box-shadow: inset 0 0 0 0.5px rgba(255, 214, 160, 0.28);
+    }
+
+    .matrix-title-cell {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      padding: 0.3rem 0.6rem 0.3rem 0;
+      vertical-align: middle;
+      white-space: nowrap;
+      max-width: 380px;
+      background: inherit;
+    }
+
+    .matrix-title-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    .matrix-pub-name {
+      font: 400 0.56rem/1.2 var(--mono);
+      letter-spacing: 0.02em;
+      color: var(--pub-muted);
+      white-space: normal;
+      overflow: visible;
+      max-width: 760px;
+      cursor: default;
+      transition: color 0.12s ease;
+    }
+
+    .matrix-row:hover .matrix-pub-name {
+      color: var(--pub-text);
+    }
+
+    .matrix-pub-sub {
+      display: block;
+      margin-top: 0.08rem;
+      font: 400 0.47rem/1.2 var(--mono);
+      letter-spacing: 0.03em;
+      color: rgba(210, 189, 164, 0.72);
+      white-space: normal;
+    }
+
+    .matrix-dots-cell {
+      padding: 0.22rem 0;
+      vertical-align: middle;
+    }
+
+    .matrix-dots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      align-items: flex-end;
+      max-width: calc(35 * 20px);
+    }
+
+    .matrix-doc {
+      width: 16px;
+      height: 20px;
+      cursor: pointer;
+      transition: transform 0.12s ease, opacity 0.12s ease, filter 0.12s ease;
+      position: relative;
+      border: none;
+      padding: 0;
+      background: transparent;
+      flex-shrink: 0;
+    }
+
+    .matrix-doc:hover,
+    .matrix-doc:focus-visible {
+      transform: scale(1.65) translateY(-1px);
+      opacity: 1 !important;
+      filter: drop-shadow(0 2px 6px rgba(255, 215, 163, 0.35));
+      outline: none;
+      z-index: 4;
+    }
+
+    .matrix-doc svg {
+      display: block;
+      width: 16px;
+      height: 20px;
+    }
+
+    .matrix-pagecount {
+      font: 400 0.46rem/1 var(--mono);
+      letter-spacing: 0.04em;
+      color: rgba(210, 189, 164, 0.5);
+      padding-left: 5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .matrix-separator {
+      height: 0.5px;
+      background: rgba(255, 214, 160, 0.08);
+    }
+
+    .matrix-separator td {
+      padding: 0;
+      height: 0.5px;
+    }
+
+    .dot-tooltip {
+      position: fixed;
+      z-index: 999;
+      background: #1a120c;
+      border: 0.5px solid rgba(255, 214, 160, 0.35);
+      color: #f5e9d8;
+      font: 400 0.52rem/1.3 var(--mono);
+      letter-spacing: 0.03em;
+      padding: 0.3rem 0.42rem;
+      pointer-events: none;
+      white-space: normal;
+      max-width: 340px;
+      opacity: 0;
+      transition: opacity 0.1s ease;
+    }
+
+    .dot-tooltip.visible {
+      opacity: 1;
+    }
+
+    /* paper grid removed - matrix view replaces it */
+
+    .pdf-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(0.75rem, 3vw, 2rem);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.26s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0.26s;
+    }
+
+    .pdf-modal.open,
+    .pdf-modal.closing {
+      visibility: visible;
+    }
+
+    .pdf-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+      transition-delay: 0s;
+    }
+
+    .pdf-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background: rgba(246, 241, 233, 0.84);
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+      transition: opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .pdf-modal.open .pdf-modal-backdrop {
+      opacity: 1;
+    }
+
+    .pdf-modal-panel {
+      position: relative;
+      width: min(960px, 96vw);
+      height: min(92vh, 980px);
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      z-index: 1;
+      opacity: 0;
+      transform: translate3d(0, 24px, 0) scale(0.985);
+      box-shadow: 0 16px 42px rgba(29, 23, 16, 0.12);
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+      will-change: transform, opacity;
+    }
+
+    .pdf-modal.open .pdf-modal-panel {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    .pdf-modal-top {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+      padding: 0.7rem 0.9rem;
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .pdf-label {
+      min-width: 0;
+      color: var(--black);
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .pdf-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .ctrl-btn {
+      background: transparent;
+      border: 1px solid var(--rule);
+      color: var(--black);
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.55rem;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .ctrl-btn:hover:not(:disabled) {
+      background: #ece7e1;
+      border-color: var(--mid);
+    }
+
+    .ctrl-btn:disabled {
+      opacity: 0.36;
+      cursor: default;
+    }
+
+    .modal-pdf-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.9rem;
+      padding: 0.85rem 1rem 1.1rem;
+      background: #f7f4ef;
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scroll-behavior: smooth;
+    }
+
+    .modal-pdf-view {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid #e6e0d7;
+      border-radius: 8px;
+      background: #fff;
+      padding: 0.75rem;
+      box-sizing: border-box;
+    }
+
+    .modal-pdf-canvas {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: min(100%, 920px);
+      max-height: 74vh;
+      object-fit: contain;
+      background: #fff;
+      box-shadow: 0 2px 16px rgba(28, 22, 15, 0.08);
+    }
+
+    .modal-pdf-loading {
+      font: 400 0.66rem/1.2 var(--mono);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--mid);
+      align-self: center;
+    }
+
+    #openPdfBtn {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .modal-minimap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      justify-content: flex-start;
+      max-width: 100%;
+      padding: 0.35rem 0.1rem 0.1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .modal-minimap-page {
+      border: 1px solid transparent;
+      padding: 0;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 1px;
+      transition: transform 0.1s ease, border-color 0.1s ease;
+    }
+
+    .modal-minimap-page svg {
+      display: block;
+      width: 16px;
+      height: 20px;
+    }
+
+    .modal-minimap-page canvas {
+      display: block;
+      width: 30px;
+      height: auto;
+      background: #fff;
+    }
+
+    .modal-minimap-page.active {
+      border-color: var(--mid);
+    }
+
+    .modal-minimap-page:hover {
+      transform: scale(1.35) translateY(-1px);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pdf-modal,
+      .pdf-modal-backdrop,
+      .pdf-modal-panel {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .page-body {
+        padding: 0 0.85rem 0.85rem;
+      }
+
+      .matrix-pub-name {
+        max-width: 190px;
+        font-size: 0.48rem;
+      }
+
+      .matrix-title-cell {
+        max-width: 220px;
+        padding-right: 0.35rem;
+      }
+
+      .matrix-doc {
+        width: 12px;
+        height: 15px;
+      }
+
+      .matrix-doc svg {
+        width: 12px;
+        height: 15px;
+      }
+
+      .matrix-dots {
+        gap: 3px;
+        max-width: calc(35 * 15px);
+      }
+
+      .pdf-modal-panel {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+      }
+
+      .pdf-label {
+        max-width: 45vw;
+      }
+
+      .modal-pdf-canvas {
+        max-width: 100%;
+        max-height: 68vh;
+      }
+
+      .modal-minimap {
+        max-width: 90vw;
+      }
+    }
+  </style>
+  <link rel="icon" href="parklogo.png" type="image/png">
+</head>
+
+<body>
+  <main class="content">
+      <div class="sec-masthead">
+        <div class="masthead-left">
+          <h1 class="sec-masthead-title">Publication Archive</h1>
+          <span class="sec-masthead-num">Page Matrix</span>
+        </div>
+      </div>
+
+
+      <div class="status-bar">
+        <span id="statusText">Preparing PDF engine...</span>
+      </div>
+
+      <div class="matrix-legend" id="matrixLegend"></div>
+
+      <div class="matrix-wrap">
+        <table class="matrix-table" id="matrixTable" aria-label="Publication page matrix"></table>
+      </div>
+
+      <div class="dot-tooltip" id="dotTooltip"></div>
+  </main>
+
+  <div class="pdf-modal" id="pdfModal" role="dialog" aria-modal="true" aria-label="PDF page viewer">
+    <div class="pdf-modal-backdrop" id="modalBackdrop"></div>
+    <article class="pdf-modal-panel">
+      <div class="pdf-modal-top">
+        <div class="pdf-label" id="modalLabel">Loading...</div>
+        <div class="pdf-controls">
+          <button class="ctrl-btn" id="prevBtn" aria-label="Previous page">Prev</button>
+          <button class="ctrl-btn" id="nextBtn" aria-label="Next page">Next</button>
+          <a class="ctrl-btn" id="openPdfBtn" target="_blank" rel="noopener" aria-label="Open PDF in new tab">Open PDF
+            ↗</a>
+          <button class="ctrl-btn" id="closeBtn" aria-label="Close viewer">Close</button>
+        </div>
+      </div>
+      <div class="modal-pdf-stage" id="modalPdfStage">
+        <div class="modal-pdf-view">
+          <canvas class="modal-pdf-canvas" id="modalPdfCanvas" aria-label="PDF page preview"></canvas>
+        </div>
+        <div class="modal-pdf-loading" id="modalPdfLoading">Rendering page...</div>
+        <div class="modal-minimap" id="modalMinimap"></div>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    const PDF_FILES = [
+      `Barriers to Prenatal Care Amid Maternal Methamphetamine Use and Congenital Syphilis Epidemic in Los Angeles County .pdf`,
+      `Double Jeopardy Study Protocol.pdf`,
+      `Examining Masculinities to Inform Gender-Transformative Violence Prevention Programs.pdf`,
+      `Gaps in the congenital syphilis prevention cascade.pdf`,
+      `Navigating Silence.pdf`,
+      `Opening the "Black Box".pdf`,
+      `Prevalence and Correlates of Men's and Women's Alcohol Use in Agrarian, Trading and Fishing Communities in Rakai.pdf`,
+      `Prioritizing Multiple Health Behavior Change Research Topics.pdf`,
+      `Qualitative Assessment on the Rise of Congenital Syphilis in California.pdf`,
+      `Republic of Korea's Health Aid Governance.pdf`,
+      `Structural Barriers to Prenatal Care & Congenital Syphilis Prevention in Kern County, California.pdf`,
+      `Student, Staff, and Faculty Perspectives on IPVSV on 3 Public University Campuses.pdf`,
+      `Student-Athletes', Coaches', and Administrators' Perspectives of Sexual Violence Prevention on NCAA Campuses.pdf`,
+      `Students Perceptions of the Relationship Between Sexual Violence and Alcohol Use.pdf`,
+      `They Don't See Us.pdf`,
+      `Understanding Perinatal Patients' Health Preferences and Patient-Provider Relationships to Prevent Congenital Syphilis in California and Louisiana.pdf`,
+      `Yellow Power Building Asian Student Community Voices Against GBV.pdf`
+    ];
+
+    const state = {
+      pages: [],
+      currentIndex: 0,
+      observer: null,
+      modalOpen: false,
+      activeTopic: 'all',
+      topicMetaByFile: {},
+      paperEntries: [],
+      pubRecords: [],
+      modalRenderToken: 0
+    };
+
+    const grid = document.getElementById('matrixTable');
+    const statusText = document.getElementById('statusText');
+    const modal = document.getElementById('pdfModal');
+    const modalLabel = document.getElementById('modalLabel');
+    const modalPdfCanvas = document.getElementById('modalPdfCanvas');
+    const modalPdfLoading = document.getElementById('modalPdfLoading');
+    const modalMinimap = document.getElementById('modalMinimap');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const topicBar = document.getElementById('topicBar');
+    const topicSections = null;
+    const matrixLegend = document.getElementById('matrixLegend');
+    const dotTooltip = document.getElementById('dotTooltip');
+    let modalCloseTimer = null;
+
+    const STRAND_COLORS = {
+      'maternal-reproductive': 'var(--strand-maternal)',
+      'gbv-aapi': 'var(--strand-gbv)',
+      'structural-mixed': 'var(--strand-structural)',
+      'global-alcohol': 'var(--strand-global)'
+    };
+    const STRAND_HEAT = {
+      'maternal-reproductive': 'rgba(245, 184, 120, 0.16)',
+      'gbv-aapi': 'rgba(226, 118, 127, 0.16)',
+      'structural-mixed': 'rgba(118, 190, 183, 0.16)',
+      'global-alcohol': 'rgba(126, 163, 235, 0.16)'
+    };
+
+    const TOPIC_STRANDS = [
+      {
+        id: 'maternal-reproductive',
+        label: 'Maternal & Reproductive Health',
+        keywords: ['maternal', 'prenatal', 'perinatal', 'reproductive', 'congenital syphilis', 'pregnancy', 'patient-provider']
+      },
+      {
+        id: 'gbv-aapi',
+        label: 'Gender-Based Violence & AAPI Health',
+        keywords: ['sexual violence', 'gender-based violence', 'violence', 'aapi', 'asian', 'anhpi', 'harassment', 'campus']
+      },
+      {
+        id: 'structural-mixed',
+        label: 'Structural Determinants & Mixed Methods',
+        keywords: ['structural', 'mixed-methods', 'mixed methods', 'qualitative', 'protocol', 'barriers', 'stigma']
+      },
+      {
+        id: 'global-alcohol',
+        label: 'Global Health & Alcohol Use',
+        keywords: ['global health', 'uganda', 'rakai', 'alcohol', 'fishing communities', 'agrarian', 'trading communities']
+      }
+    ];
+
+    const IS_FILE_PROTOCOL = window.location.protocol === 'file:';
+
+    function setStatus(message) {
+      statusText.textContent = message;
+    }
+
+    function loadPdfJsFrom(url) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url;
+        script.async = true;
+        script.onload = () => resolve(url);
+        script.onerror = () => reject(new Error(`Failed to load ${url}`));
+        document.head.appendChild(script);
+      });
+    }
+
+    async function ensurePdfJs() {
+      if (window.pdfjsLib) return window.pdfjsLib;
+      const sources = [
+        'js/pdf.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
+        'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js',
+        'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js'
+      ];
+      for (const src of sources) {
+        try {
+          await loadPdfJsFrom(src);
+          if (window.pdfjsLib) return window.pdfjsLib;
+        } catch (error) {
+          console.warn(error);
+        }
+      }
+      throw new Error('Unable to load PDF.js.');
+    }
+
+    function fileTitle(name) {
+      return name.replace(/\.pdf$/i, '').replace(/[_-]+/g, ' ');
+    }
+
+    function normalizePdfName(name) {
+      return String(name || '').trim().toLowerCase();
+    }
+
+    function normalizeText(text) {
+      return String(text || '')
+        .toLowerCase()
+        .replace(/['".,()&:+\-]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function tokenSet(text) {
+      return new Set(normalizeText(text).split(' ').filter((w) => w.length > 2));
+    }
+
+    function topicLabelById(id) {
+      const t = TOPIC_STRANDS.find((x) => x.id === id);
+      return t ? t.label : 'Structural Determinants & Mixed Methods';
+    }
+
+    function journalYearText(meta) {
+      const parts = [];
+      if (meta && meta.journal) parts.push(meta.journal);
+      if (meta && meta.year) parts.push(String(meta.year));
+      return parts.join('. ');
+    }
+
+    function pickTopicsFromText(textBlob) {
+      const scored = TOPIC_STRANDS.map((topic) => {
+        const matched = topic.keywords.filter((kw) => textBlob.includes(kw));
+        return { id: topic.id, label: topic.label, score: matched.length, matchedTerms: matched.slice(0, 3) };
+      }).filter((t) => t.score > 0).sort((a, b) => b.score - a.score);
+
+      if (!scored.length) {
+        return [{ id: TOPIC_STRANDS[2].id, label: TOPIC_STRANDS[2].label, matchedTerms: [] }];
+      }
+      return scored;
+    }
+
+    async function loadPublicationMeta() {
+      try {
+        const resp = await fetch('data/publications.json');
+        if (!resp.ok) throw new Error('metadata unavailable');
+        const pubs = await resp.json();
+        const byFile = {};
+        state.pubRecords = pubs.map((pub) => ({
+          title: pub.title || '',
+          journal: pub.journal || '',
+          year: pub.year || null,
+          citation: pub.citation || '',
+          titleTokens: tokenSet(pub.title || '')
+        }));
+        pubs.forEach((pub) => {
+          if (!pub || !pub.pdf) return;
+          const blob = [
+            pub.title || '',
+            pub.citation || '',
+            pub.journal || '',
+            Array.isArray(pub.research_areas) ? pub.research_areas.join(' ') : '',
+            pub.abstract || '',
+            Array.isArray(pub.keywords) ? pub.keywords.join(' ') : ''
+          ].join(' ').toLowerCase();
+          const topics = pickTopicsFromText(blob);
+          byFile[normalizePdfName(pub.pdf)] = {
+            strands: topics,
+            displayTitle: pub.title || fileTitle(pub.pdf),
+            journal: pub.journal || '',
+            year: pub.year || null,
+            citation: pub.citation || ''
+          };
+        });
+        state.topicMetaByFile = byFile;
+      } catch (err) {
+        console.warn('Could not load publications metadata for topic strands', err);
+        state.topicMetaByFile = {};
+      }
+    }
+
+    function topicsForFile(file) {
+      const mapped = state.topicMetaByFile[normalizePdfName(file)];
+      if (mapped) return mapped;
+
+      const fileLabel = fileTitle(file);
+      const fileTokens = tokenSet(fileLabel);
+      let best = null;
+      let bestScore = 0;
+      state.pubRecords.forEach((pub) => {
+        let score = 0;
+        fileTokens.forEach((tok) => {
+          if (pub.titleTokens.has(tok)) score++;
+        });
+        if (score > bestScore) {
+          bestScore = score;
+          best = pub;
+        }
+      });
+
+      if (best && bestScore >= 3) {
+        const strands = pickTopicsFromText(normalizeText(best.title + ' ' + best.journal));
+        return {
+          strands,
+          displayTitle: best.title || fileLabel,
+          journal: best.journal || '',
+          year: best.year || null,
+          citation: best.citation || ''
+        };
+      }
+
+      return {
+        strands: pickTopicsFromText(fileLabel.toLowerCase()),
+        displayTitle: fileLabel,
+        journal: '',
+        year: null,
+        citation: ''
+      };
+    }
+
+    /* backwards compat shim for any remaining single-topic calls */
+    function topicForFile(file) {
+      const multi = topicsForFile(file);
+      const primary = multi.strands[0] || { id: 'structural-mixed', label: 'Structural Determinants & Mixed Methods', matchedTerms: [] };
+      return { ...primary, displayTitle: multi.displayTitle };
+    }
+
+    function buildTopicControls() {
+      if (!topicBar) return;
+      topicBar.innerHTML = '';
+      const allBtn = document.createElement('button');
+      allBtn.className = 'topic-btn active';
+      allBtn.type = 'button';
+      allBtn.dataset.topic = 'all';
+      allBtn.textContent = 'All Topic Strands';
+      topicBar.appendChild(allBtn);
+
+      TOPIC_STRANDS.forEach((t) => {
+        const btn = document.createElement('button');
+        btn.className = 'topic-btn';
+        btn.type = 'button';
+        btn.dataset.topic = t.id;
+        btn.textContent = t.label;
+        topicBar.appendChild(btn);
+      });
+
+      topicBar.addEventListener('click', (event) => {
+        const btn = event.target.closest('.topic-btn');
+        if (!btn) return;
+        state.activeTopic = btn.dataset.topic || 'all';
+        topicBar.querySelectorAll('.topic-btn').forEach((b) => {
+          b.classList.toggle('active', b === btn);
+        });
+        applyTopicFilter();
+      });
+    }
+
+    function applyTopicFilter() {
+      const rows = grid.querySelectorAll('.matrix-row');
+      let shownPages = 0;
+      let totalPapers = 0;
+      rows.forEach((row) => {
+        const rowStrands = (row.dataset.topic || '').split(',');
+        const match = state.activeTopic === 'all' || rowStrands.includes(state.activeTopic);
+        row.classList.toggle('dim', !match);
+        row.classList.toggle('selected', match && state.activeTopic !== 'all');
+        if (match && state.activeTopic !== 'all') {
+          row.style.setProperty('--row-heat', STRAND_HEAT[state.activeTopic] || 'rgba(255, 232, 198, 0.1)');
+        } else {
+          row.style.removeProperty('--row-heat');
+        }
+        if (match) {
+          totalPapers++;
+          shownPages += row.querySelectorAll('.matrix-doc').length;
+        }
+      });
+      if (matrixLegend) {
+        matrixLegend.querySelectorAll('.legend-item').forEach((el) => {
+          el.classList.toggle('active', (el.dataset.topic || 'all') === state.activeTopic);
+        });
+      }
+      if (topicBar) {
+        topicBar.querySelectorAll('.topic-btn').forEach((el) => {
+          el.classList.toggle('active', (el.dataset.topic || 'all') === state.activeTopic);
+        });
+      }
+      const suffix = state.activeTopic === 'all' ? 'All Topic Strands' : topicLabelById(state.activeTopic);
+      setStatus(`${totalPapers} papers · ${shownPages} pages · ${suffix}`);
+    }
+
+    async function loadIndex() {
+      const loadingTasks = PDF_FILES.map(async (file) => {
+        const url = `publications/${encodeURIComponent(file)}`;
+        const doc = await pdfjsLib.getDocument(url).promise;
+        const pages = [];
+        for (let i = 1; i <= doc.numPages; i += 1) {
+          pages.push({ file, title: fileTitle(file), pageNumber: i, doc });
+        }
+        return { file, doc, pages };
+      });
+
+      const settled = await Promise.allSettled(loadingTasks);
+      const ok = settled.filter((r) => r.status === 'fulfilled');
+      const bad = settled.filter((r) => r.status === 'rejected');
+
+      state.pages = ok.flatMap((r) => r.value.pages);
+      state.paperEntries = ok.map((r) => {
+        const file = r.value.file;
+        const multi = topicsForFile(file);
+        return {
+          file,
+          doc: r.value.doc,
+          strandIds: multi.strands.map((s) => s.id),
+          topicId: multi.strands[0]?.id || 'structural-mixed',
+          topicLabel: multi.strands[0]?.label || 'Structural Determinants & Mixed Methods',
+          title: multi.displayTitle || fileTitle(file)
+        };
+      });
+
+      if (!state.pages.length) {
+        throw new Error('No PDFs could be indexed.');
+      }
+
+      buildGrid();
+      buildTopicSections();
+      statusText.textContent = bad.length
+        ? `${ok.length}/${PDF_FILES.length} PDFs indexed · ${state.pages.length} pages`
+        : `${PDF_FILES.length} PDFs · ${state.pages.length} pages`;
+
+      if (bad.length) {
+        console.warn('Some PDFs failed to index:', bad);
+      }
+
+      applyTopicFilter();
+    }
+
+
+    function buildLegend() {
+      if (!matrixLegend) return;
+      matrixLegend.innerHTML = '';
+
+      const allItem = document.createElement('button');
+      allItem.type = 'button';
+      allItem.className = 'legend-item active';
+      allItem.dataset.topic = 'all';
+      const allSwatch = document.createElement('span');
+      allSwatch.className = 'legend-swatch';
+      allSwatch.style.background = 'rgba(255, 214, 160, 0.7)';
+      const allLabel = document.createElement('span');
+      allLabel.className = 'legend-label';
+      allLabel.textContent = 'All';
+      allItem.append(allSwatch, allLabel);
+      matrixLegend.appendChild(allItem);
+
+      TOPIC_STRANDS.forEach((t) => {
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'legend-item';
+        item.dataset.topic = t.id;
+        const swatch = document.createElement('span');
+        swatch.className = 'legend-swatch';
+        swatch.style.background = STRAND_COLORS[t.id] || 'var(--pub-muted)';
+        const label = document.createElement('span');
+        label.className = 'legend-label';
+        label.textContent = t.label;
+        item.append(swatch, label);
+        matrixLegend.appendChild(item);
+      });
+
+      matrixLegend.addEventListener('click', (event) => {
+        const btn = event.target.closest('.legend-item');
+        if (!btn) return;
+        state.activeTopic = btn.dataset.topic || 'all';
+        applyTopicFilter();
+      });
+    }
+
+    function buildTopicSections() {
+      /* replaced by matrix view */
+    }
+
+    const LINE_PATTERNS = [
+      [3, 11, 5, 10, 4, 9, 6, 11],
+      [4, 10, 6, 11, 3, 8, 5, 10],
+      [5, 11, 3, 9, 6, 10, 4, 8],
+      [3, 9, 5, 11, 4, 10, 6, 9],
+      [6, 10, 4, 8, 5, 11, 3, 10],
+    ];
+
+    function createDocSvg(strandIds, pageNum, totalPages) {
+      const w = 16, h = 20, fold = 4;
+      const isFirst = pageNum === 1;
+      const seed = (pageNum * 7 + totalPages * 3) % 5;
+      const lines = LINE_PATTERNS[seed];
+      const ns = 'http://www.w3.org/2000/svg';
+
+      const svg = document.createElementNS(ns, 'svg');
+      svg.setAttribute('width', String(w));
+      svg.setAttribute('height', String(h));
+      svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+      svg.setAttribute('fill', 'none');
+      svg.setAttribute('aria-hidden', 'true');
+
+      /* Page body with dog-ear */
+      const body = document.createElementNS(ns, 'path');
+      body.setAttribute('d', `M0.5 0.5 H${w - fold - 0.5} L${w - 0.5} ${fold + 0.5} V${h - 0.5} H0.5 Z`);
+      body.setAttribute('fill', isFirst ? '#f5ead6' : '#ede3d0');
+      body.setAttribute('stroke', 'rgba(180,155,125,0.4)');
+      body.setAttribute('stroke-width', '0.5');
+      body.setAttribute('vector-effect', 'non-scaling-stroke');
+      svg.appendChild(body);
+
+      /* Dog-ear fold */
+      const ear = document.createElementNS(ns, 'path');
+      ear.setAttribute('d', `M${w - fold - 0.5} 0.5 L${w - fold - 0.5} ${fold + 0.5} L${w - 0.5} ${fold + 0.5}`);
+      ear.setAttribute('fill', 'rgba(200,180,155,0.35)');
+      ear.setAttribute('stroke', 'rgba(180,155,125,0.3)');
+      ear.setAttribute('stroke-width', '0.4');
+      ear.setAttribute('vector-effect', 'non-scaling-stroke');
+      svg.appendChild(ear);
+
+      /* Strand accent bar(s) at top */
+      const barW = w - fold - 2;
+      strandIds.forEach((sid, si) => {
+        const bar = document.createElementNS(ns, 'rect');
+        const segW = barW / strandIds.length;
+        bar.setAttribute('x', String(1 + si * segW));
+        bar.setAttribute('y', '1.5');
+        bar.setAttribute('width', String(segW));
+        bar.setAttribute('height', '1.5');
+        bar.setAttribute('rx', '0.3');
+        bar.setAttribute('fill', STRAND_COLORS[sid] || '#d2bda4');
+        bar.setAttribute('opacity', '0.7');
+        svg.appendChild(bar);
+      });
+
+      /* Title line for page 1 */
+      if (isFirst) {
+        const tl = document.createElementNS(ns, 'rect');
+        tl.setAttribute('x', '1.5');
+        tl.setAttribute('y', '4');
+        tl.setAttribute('width', String(w - 4));
+        tl.setAttribute('height', '0.5');
+        tl.setAttribute('rx', '0.2');
+        tl.setAttribute('fill', 'rgba(120,95,70,0.35)');
+        svg.appendChild(tl);
+      }
+
+      /* Simulated text lines */
+      const count = isFirst ? 6 : 5;
+      for (let i = 0; i < count; i++) {
+        const ln = document.createElementNS(ns, 'rect');
+        ln.setAttribute('x', '1.5');
+        ln.setAttribute('y', String(isFirst ? 5 + i * 2.2 : 4.5 + i * 2.4));
+        ln.setAttribute('width', String(Math.min(lines[i] || 8, w - 3)));
+        ln.setAttribute('height', '0.8');
+        ln.setAttribute('rx', '0.2');
+        ln.setAttribute('fill', 'rgba(120,95,70,0.22)');
+        svg.appendChild(ln);
+      }
+
+      return svg;
+    }
+
+    function strandGradient(strandIds) {
+      const colors = strandIds.map((id) => STRAND_COLORS[id] || 'var(--pub-muted)');
+      if (colors.length === 1) return colors[0];
+      const stops = colors.map((c, i) => {
+        const start = Math.round((i / colors.length) * 100);
+        const end = Math.round(((i + 1) / colors.length) * 100);
+        return `${c} ${start}%, ${c} ${end}%`;
+      }).join(', ');
+      return `linear-gradient(135deg, ${stops})`;
+    }
+
+    function buildGrid() {
+      buildLegend();
+      const table = grid;
+      table.innerHTML = '';
+
+      /* Group pages by paper */
+      const paperMap = new Map();
+      state.pages.forEach((item, globalIdx) => {
+        if (!paperMap.has(item.file)) {
+          paperMap.set(item.file, []);
+        }
+        paperMap.get(item.file).push({ ...item, globalIdx });
+      });
+
+      /* Sort papers by year (desc), then title */
+      const sortedPapers = Array.from(paperMap.entries()).sort((a, b) => {
+        const mA = topicsForFile(a[0]);
+        const mB = topicsForFile(b[0]);
+        const yA = Number(mA.year || 0);
+        const yB = Number(mB.year || 0);
+        if (yA !== yB) return yB - yA;
+        return (mA.displayTitle || '').localeCompare(mB.displayTitle || '');
+      });
+
+      sortedPapers.forEach(([file, pages]) => {
+        const multi = topicsForFile(file);
+        const strandIds = multi.strands.map((s) => s.id);
+
+        const row = document.createElement('tr');
+        row.className = 'matrix-row';
+        row.dataset.topic = strandIds.join(',');
+        row.dataset.file = file;
+
+        /* Title cell */
+        const titleCell = document.createElement('td');
+        titleCell.className = 'matrix-title-cell';
+
+        const titleInner = document.createElement('div');
+        titleInner.className = 'matrix-title-inner';
+
+        const name = document.createElement('span');
+        name.className = 'matrix-pub-name';
+        name.textContent = multi.displayTitle || fileTitle(file);
+        name.title = multi.displayTitle || fileTitle(file);
+
+        const meta = document.createElement('span');
+        meta.className = 'matrix-pub-sub';
+        const parts = [];
+        if (multi.journal) parts.push(multi.journal);
+        if (multi.year) parts.push(String(multi.year));
+        meta.textContent = parts.join(' · ');
+
+        const textWrap = document.createElement('span');
+        textWrap.append(name, meta);
+        titleInner.append(textWrap);
+        titleCell.appendChild(titleInner);
+
+        /* Dots cell */
+        const dotsCell = document.createElement('td');
+        dotsCell.className = 'matrix-dots-cell';
+
+        const dotsWrap = document.createElement('div');
+        dotsWrap.className = 'matrix-dots';
+        const paperLabelBase = `${multi.displayTitle || fileTitle(file)}${journalYearText(multi) ? `. ${journalYearText(multi)}` : ''}`;
+
+        pages.forEach((pg) => {
+          const doc = document.createElement('button');
+          doc.className = 'matrix-doc';
+          doc.type = 'button';
+          doc.dataset.page = String(pg.pageNumber);
+          doc.dataset.globalIdx = String(pg.globalIdx);
+          doc.setAttribute('aria-label', `${paperLabelBase}, page ${pg.pageNumber}`);
+          doc.title = `${paperLabelBase} — page ${pg.pageNumber}`;
+
+          if (pg.pageNumber === 1) {
+            doc.style.opacity = '1';
+          } else if (pg.pageNumber === pages.length) {
+            doc.style.opacity = '0.7';
+          } else {
+            const frac = pg.pageNumber / pages.length;
+            doc.style.opacity = String(0.4 + (1 - frac) * 0.28);
+          }
+
+          doc.appendChild(createDocSvg(strandIds, pg.pageNumber, pages.length));
+
+          doc.addEventListener('click', () => openModal(pg.globalIdx));
+
+          doc.addEventListener('mouseenter', (e) => {
+            const strandLabels = multi.strands.map((s) => s.label).join(' + ');
+            dotTooltip.textContent = `${paperLabelBase} | p. ${pg.pageNumber} / ${pages.length} | ${strandLabels}`;
+            dotTooltip.classList.add('visible');
+            positionTooltip(e);
+          });
+          doc.addEventListener('mousemove', positionTooltip);
+          doc.addEventListener('mouseleave', () => {
+            dotTooltip.classList.remove('visible');
+          });
+
+          dotsWrap.appendChild(doc);
+        });
+
+        const countLabel = document.createElement('span');
+        countLabel.className = 'matrix-pagecount';
+        countLabel.textContent = `${pages.length}p`;
+        dotsWrap.appendChild(countLabel);
+
+        dotsCell.appendChild(dotsWrap);
+        row.append(titleCell, dotsCell);
+        table.appendChild(row);
+      });
+
+      applyTopicFilter();
+    }
+
+    function positionTooltip(e) {
+      dotTooltip.style.left = (e.clientX + 10) + 'px';
+      dotTooltip.style.top = (e.clientY - 26) + 'px';
+    }
+
+    function initObserver() {
+      /* no-op: matrix view doesn't need intersection observer */
+    }
+
+    async function renderPdfPageToCanvas(doc, pageNumber, canvas, maxCssWidth, maxCssHeight) {
+      const page = await doc.getPage(pageNumber);
+      const baseViewport = page.getViewport({ scale: 1 });
+      const safeMaxWidth = Math.max(280, maxCssWidth || 820);
+      const safeMaxHeight = Math.max(360, maxCssHeight || 1100);
+      const widthScale = safeMaxWidth / baseViewport.width;
+      const heightScale = safeMaxHeight / baseViewport.height;
+      const scale = Math.max(0.3, Math.min(widthScale, heightScale));
+      const viewport = page.getViewport({ scale });
+
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.floor(viewport.width * dpr);
+      canvas.height = Math.floor(viewport.height * dpr);
+      canvas.style.width = '';
+      canvas.style.height = '';
+
+      const ctx = canvas.getContext('2d', { alpha: false });
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      await page.render({ canvasContext: ctx, viewport }).promise;
+    }
+
+    async function renderPdfThumbToCanvas(doc, pageNumber, canvas) {
+      const page = await doc.getPage(pageNumber);
+      const baseViewport = page.getViewport({ scale: 1 });
+      const targetWidth = 30;
+      const scale = Math.max(0.12, targetWidth / baseViewport.width);
+      const viewport = page.getViewport({ scale });
+
+      canvas.width = Math.max(1, Math.floor(viewport.width));
+      canvas.height = Math.max(1, Math.floor(viewport.height));
+      const ctx = canvas.getContext('2d', { alpha: false });
+      await page.render({ canvasContext: ctx, viewport }).promise;
+    }
+
+    async function renderModalPage() {
+      const item = state.pages[state.currentIndex];
+      if (!item) return;
+      const token = ++state.modalRenderToken;
+
+      const multi = topicsForFile(item.file);
+      const strandIds = multi.strands.map((s) => s.id);
+
+      /* All pages belonging to this paper */
+      const paperPages = state.pages
+        .map((p, i) => ({ ...p, globalIdx: i }))
+        .filter((p) => p.file === item.file);
+      const totalPages = paperPages.length;
+
+      /* PDF URL — supports #page=N in most browsers */
+      const pdfUrl = `publications/${encodeURIComponent(item.file)}#page=${item.pageNumber}`;
+
+      /* Header label */
+      modalLabel.textContent = `${multi.displayTitle} · p. ${item.pageNumber} / ${totalPages}`;
+
+      /* Open PDF button in controls */
+      const openPdfBtn = document.getElementById('openPdfBtn');
+      if (openPdfBtn) openPdfBtn.href = pdfUrl;
+
+      modalPdfLoading.textContent = 'Rendering page...';
+      modalPdfLoading.style.display = 'block';
+      try {
+        const stageEl = document.getElementById('modalPdfStage');
+        const stageWidth = (stageEl && stageEl.clientWidth > 0) ? stageEl.clientWidth : (document.querySelector('.pdf-modal-panel')?.clientWidth || 680);
+        const maxCssWidth = Math.max(280, Math.floor(stageWidth - 36));
+        const maxCssHeight = Math.max(360, Math.floor(window.innerHeight * 0.72));
+        await renderPdfPageToCanvas(item.doc, item.pageNumber, modalPdfCanvas, maxCssWidth, maxCssHeight);
+        if (token !== state.modalRenderToken) return;
+        modalPdfLoading.style.display = 'none';
+      } catch (err) {
+        if (token !== state.modalRenderToken) return;
+        modalPdfLoading.textContent = 'Preview unavailable. Use Open PDF.';
+      }
+
+      /* Page minimap — all pages in the paper, current highlighted */
+      modalMinimap.innerHTML = '';
+      const modalLabelBase = `${multi.displayTitle || fileTitle(item.file)}${journalYearText(multi) ? `. ${journalYearText(multi)}` : ''}`;
+      paperPages.forEach((pg) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'modal-minimap-page' + (pg.pageNumber === item.pageNumber ? ' active' : '');
+        btn.setAttribute('aria-label', `${modalLabelBase}, page ${pg.pageNumber}`);
+        btn.title = `${modalLabelBase} — page ${pg.pageNumber}`;
+        const miniCanvas = document.createElement('canvas');
+        miniCanvas.setAttribute('aria-hidden', 'true');
+        btn.appendChild(miniCanvas);
+        btn.addEventListener('click', () => openModal(pg.globalIdx));
+        modalMinimap.appendChild(btn);
+
+        renderPdfThumbToCanvas(item.doc, pg.pageNumber, miniCanvas).catch(() => {
+          miniCanvas.replaceWith(createDocSvg(strandIds, pg.pageNumber, totalPages));
+        });
+      });
+
+      prevBtn.disabled = state.currentIndex <= 0;
+      nextBtn.disabled = state.currentIndex >= state.pages.length - 1;
+    }
+
+    function openModal(index) {
+      if (modalCloseTimer) {
+        window.clearTimeout(modalCloseTimer);
+        modalCloseTimer = null;
+      }
+      state.currentIndex = index;
+      state.modalOpen = true;
+      modal.classList.remove('closing');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      window.requestAnimationFrame(() => {
+        if (state.modalOpen) renderModalPage();
+      });
+    }
+
+    function closeModal() {
+      if (!state.modalOpen && !modal.classList.contains('open')) return;
+      state.modalOpen = false;
+      state.modalRenderToken += 1;
+      modal.classList.add('closing');
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      modalCloseTimer = window.setTimeout(() => {
+        modal.classList.remove('closing');
+        modalCloseTimer = null;
+      }, 280);
+    }
+
+    function move(step) {
+      const next = state.currentIndex + step;
+      if (next < 0 || next >= state.pages.length) return;
+      state.currentIndex = next;
+      renderModalPage();
+    }
+
+    document.getElementById('modalBackdrop').addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', closeModal);
+    prevBtn.addEventListener('click', () => move(-1));
+    nextBtn.addEventListener('click', () => move(1));
+
+    window.addEventListener('keydown', (event) => {
+      if (!state.modalOpen) return;
+      if (event.key === 'Escape') {
+        closeModal();
+      } else if (event.key === 'ArrowLeft') {
+        move(-1);
+      } else if (event.key === 'ArrowRight') {
+        move(1);
+      }
+    });
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      if (!state.modalOpen) return;
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(() => renderModalPage(), 120);
+    });
+
+    async function bootstrap() {
+      if (IS_FILE_PROTOCOL) {
+        setStatus('Thumbnails disabled on file://. Serve via local server (python3 -m http.server 8000).');
+        return;
+      }
+
+      try {
+        setStatus('Loading PDF engine...');
+        const pdfjs = await ensurePdfJs();
+        pdfjs.GlobalWorkerOptions.workerSrc = 'js/pdf.worker.min.js';
+        buildTopicControls();
+        await loadPublicationMeta();
+        setStatus('Indexing PDFs...');
+        await loadIndex();
+      } catch (error) {
+        setStatus('Failed to load PDF engine. Try refreshing.');
+        console.error(error);
+      }
+    }
+
+    bootstrap();
+  </script>
+</body>
+
+</html>

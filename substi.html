@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Substance + STI — Eunhee Victoria Park</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/shell.css" />
+  <style>
+    .protocol-citation { line-height: 1.5; margin-bottom: 1rem; }
+    .protocol-citation a { color: var(--black); }
+    .pub-block { margin-bottom: 2.4rem; }
+
+    .entry-note {
+      font-family: var(--sans);
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--black);
+      border-left: 3px solid #2e7d32;
+      padding: 0.4rem 0 0.4rem 1.2rem;
+      margin: 0.7rem 0 1.6rem;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .entry-note a {
+      color: var(--black);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .link-btn {
+      display: inline-block;
+      margin-left: 0.4rem;
+      padding: 0.18rem 0.55rem;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--black);
+      background: transparent;
+      border: 1px solid var(--mid);
+      border-radius: 2px;
+      text-decoration: none;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+
+    .link-btn:hover {
+      background: var(--black);
+      color: #fff;
+      border-color: var(--black);
+    }
+
+    .archive-pages { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.7rem 0 1.4rem; }
+    .archive-pages a { display: block; width: 110px; aspect-ratio: 1 / 1.3; border: 1px solid var(--rule, #d8d4ce); background: #fff; overflow: hidden; transition: box-shadow 0.2s ease, transform 0.2s ease; }
+    .archive-pages a:hover { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18); transform: translateY(-2px); }
+    .archive-pages img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+
+    .lightbox { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.88); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 4rem 2rem 2rem; }
+    .lightbox.open { display: flex; }
+    .lightbox-img-wrap { position: relative; max-width: min(900px, 95vw); max-height: 90vh; display: flex; align-items: center; justify-content: center; }
+    .lightbox-img { display: block; max-width: 100%; max-height: 90vh; background: #fff; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); }
+    .lightbox button { position: absolute; background: rgba(255, 255, 255, 0.9); border: 0; width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.15s ease; }
+    .lightbox button:hover { background: #fff; }
+    .lightbox-close { top: -3rem; right: 0; }
+    .lightbox-prev { left: -4rem; top: 50%; transform: translateY(-50%); }
+    .lightbox-next { right: -4rem; top: 50%; transform: translateY(-50%); }
+    .lightbox-counter { position: absolute; top: -3rem; left: 0; color: #fff; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; line-height: 44px; }
+    @media (max-width: 900px) { .lightbox-prev { left: 0.5rem; } .lightbox-next { right: 0.5rem; } .lightbox-close { top: 0.5rem; right: 0.5rem; } .lightbox-counter { top: 0.5rem; left: 1rem; line-height: 1; } }
+  </style>
+  <link rel="icon" href="parklogo.png" type="image/png">
+</head>
+
+<body>
+  <main class="content">
+    <div class="sec-masthead">
+      <h1 class="sec-masthead-title">Substance + STI</h1>
+      <span class="sec-masthead-num">Women's Health</span>
+    </div>
+    <div class="page-body">
+
+      <p class="entry-note">
+        I designed my NIH/NIDA F31-funded dissertation, <em>Barriers to Prenatal Care in the Context of Maternal Methamphetamine Use and Congenital Syphilis in Los Angeles County, 2011&ndash;2020</em>, to ask where methamphetamine use, stigma, and pregnancy collide in the syphilis treatment cascade. I integrated multilevel, spatial, and longitudinal epidemiologic analyses to follow how structural factors shape who is screened, who is treated, and whose care falls apart.
+      </p>
+
+      <div class="pub-block">
+        <p class="protocol-citation"><b>Park, E.</b> (2025). Barriers to Prenatal Care in the Context of Maternal Methamphetamine Use and Congenital Syphilis in Los Angeles County, 2011-2020. <em>UCLA.</em> ProQuest ID: Park_ucla_0031D_24016. Merritt ID: ark:/13030/m52s5gcj. Retrieved from <a href="https://escholarship.org/uc/item/6mc8h89x" target="_blank" rel="noopener">https://escholarship.org/uc/item/6mc8h89x</a>
+          <a class="link-btn" href="https://escholarship.org/uc/item/6mc8h89x" target="_blank" rel="noopener">eScholarship ↗</a></p>
+        <div class="archive-pages lightbox-trigger" aria-label="PDF page thumbnails">
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=1" target="_blank" rel="noopener" aria-label="Page 1"><img src="reports/dissertation-page-001.png" alt="Page 1" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=2" target="_blank" rel="noopener" aria-label="Page 2"><img src="reports/dissertation-page-002.png" alt="Page 2" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=3" target="_blank" rel="noopener" aria-label="Page 3"><img src="reports/dissertation-page-003.png" alt="Page 3" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=4" target="_blank" rel="noopener" aria-label="Page 4"><img src="reports/dissertation-page-004.png" alt="Page 4" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=5" target="_blank" rel="noopener" aria-label="Page 5"><img src="reports/dissertation-page-005.png" alt="Page 5" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=6" target="_blank" rel="noopener" aria-label="Page 6"><img src="reports/dissertation-page-006.png" alt="Page 6" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=7" target="_blank" rel="noopener" aria-label="Page 7"><img src="reports/dissertation-page-007.png" alt="Page 7" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=8" target="_blank" rel="noopener" aria-label="Page 8"><img src="reports/dissertation-page-008.png" alt="Page 8" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=9" target="_blank" rel="noopener" aria-label="Page 9"><img src="reports/dissertation-page-009.png" alt="Page 9" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=10" target="_blank" rel="noopener" aria-label="Page 10"><img src="reports/dissertation-page-010.png" alt="Page 10" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=11" target="_blank" rel="noopener" aria-label="Page 11"><img src="reports/dissertation-page-011.png" alt="Page 11" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=12" target="_blank" rel="noopener" aria-label="Page 12"><img src="reports/dissertation-page-012.png" alt="Page 12" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=13" target="_blank" rel="noopener" aria-label="Page 13"><img src="reports/dissertation-page-013.png" alt="Page 13" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=14" target="_blank" rel="noopener" aria-label="Page 14"><img src="reports/dissertation-page-014.png" alt="Page 14" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=15" target="_blank" rel="noopener" aria-label="Page 15"><img src="reports/dissertation-page-015.png" alt="Page 15" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=16" target="_blank" rel="noopener" aria-label="Page 16"><img src="reports/dissertation-page-016.png" alt="Page 16" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=17" target="_blank" rel="noopener" aria-label="Page 17"><img src="reports/dissertation-page-017.png" alt="Page 17" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=18" target="_blank" rel="noopener" aria-label="Page 18"><img src="reports/dissertation-page-018.png" alt="Page 18" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=19" target="_blank" rel="noopener" aria-label="Page 19"><img src="reports/dissertation-page-019.png" alt="Page 19" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=20" target="_blank" rel="noopener" aria-label="Page 20"><img src="reports/dissertation-page-020.png" alt="Page 20" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=21" target="_blank" rel="noopener" aria-label="Page 21"><img src="reports/dissertation-page-021.png" alt="Page 21" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=22" target="_blank" rel="noopener" aria-label="Page 22"><img src="reports/dissertation-page-022.png" alt="Page 22" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=23" target="_blank" rel="noopener" aria-label="Page 23"><img src="reports/dissertation-page-023.png" alt="Page 23" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=24" target="_blank" rel="noopener" aria-label="Page 24"><img src="reports/dissertation-page-024.png" alt="Page 24" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=25" target="_blank" rel="noopener" aria-label="Page 25"><img src="reports/dissertation-page-025.png" alt="Page 25" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=26" target="_blank" rel="noopener" aria-label="Page 26"><img src="reports/dissertation-page-026.png" alt="Page 26" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=27" target="_blank" rel="noopener" aria-label="Page 27"><img src="reports/dissertation-page-027.png" alt="Page 27" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=28" target="_blank" rel="noopener" aria-label="Page 28"><img src="reports/dissertation-page-028.png" alt="Page 28" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=29" target="_blank" rel="noopener" aria-label="Page 29"><img src="reports/dissertation-page-029.png" alt="Page 29" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=30" target="_blank" rel="noopener" aria-label="Page 30"><img src="reports/dissertation-page-030.png" alt="Page 30" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=31" target="_blank" rel="noopener" aria-label="Page 31"><img src="reports/dissertation-page-031.png" alt="Page 31" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=32" target="_blank" rel="noopener" aria-label="Page 32"><img src="reports/dissertation-page-032.png" alt="Page 32" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=33" target="_blank" rel="noopener" aria-label="Page 33"><img src="reports/dissertation-page-033.png" alt="Page 33" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=34" target="_blank" rel="noopener" aria-label="Page 34"><img src="reports/dissertation-page-034.png" alt="Page 34" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=35" target="_blank" rel="noopener" aria-label="Page 35"><img src="reports/dissertation-page-035.png" alt="Page 35" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=36" target="_blank" rel="noopener" aria-label="Page 36"><img src="reports/dissertation-page-036.png" alt="Page 36" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=37" target="_blank" rel="noopener" aria-label="Page 37"><img src="reports/dissertation-page-037.png" alt="Page 37" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=38" target="_blank" rel="noopener" aria-label="Page 38"><img src="reports/dissertation-page-038.png" alt="Page 38" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=39" target="_blank" rel="noopener" aria-label="Page 39"><img src="reports/dissertation-page-039.png" alt="Page 39" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=40" target="_blank" rel="noopener" aria-label="Page 40"><img src="reports/dissertation-page-040.png" alt="Page 40" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=41" target="_blank" rel="noopener" aria-label="Page 41"><img src="reports/dissertation-page-041.png" alt="Page 41" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=42" target="_blank" rel="noopener" aria-label="Page 42"><img src="reports/dissertation-page-042.png" alt="Page 42" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=43" target="_blank" rel="noopener" aria-label="Page 43"><img src="reports/dissertation-page-043.png" alt="Page 43" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=44" target="_blank" rel="noopener" aria-label="Page 44"><img src="reports/dissertation-page-044.png" alt="Page 44" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=45" target="_blank" rel="noopener" aria-label="Page 45"><img src="reports/dissertation-page-045.png" alt="Page 45" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=46" target="_blank" rel="noopener" aria-label="Page 46"><img src="reports/dissertation-page-046.png" alt="Page 46" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=47" target="_blank" rel="noopener" aria-label="Page 47"><img src="reports/dissertation-page-047.png" alt="Page 47" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=48" target="_blank" rel="noopener" aria-label="Page 48"><img src="reports/dissertation-page-048.png" alt="Page 48" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=49" target="_blank" rel="noopener" aria-label="Page 49"><img src="reports/dissertation-page-049.png" alt="Page 49" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=50" target="_blank" rel="noopener" aria-label="Page 50"><img src="reports/dissertation-page-050.png" alt="Page 50" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=51" target="_blank" rel="noopener" aria-label="Page 51"><img src="reports/dissertation-page-051.png" alt="Page 51" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=52" target="_blank" rel="noopener" aria-label="Page 52"><img src="reports/dissertation-page-052.png" alt="Page 52" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=53" target="_blank" rel="noopener" aria-label="Page 53"><img src="reports/dissertation-page-053.png" alt="Page 53" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=54" target="_blank" rel="noopener" aria-label="Page 54"><img src="reports/dissertation-page-054.png" alt="Page 54" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=55" target="_blank" rel="noopener" aria-label="Page 55"><img src="reports/dissertation-page-055.png" alt="Page 55" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=56" target="_blank" rel="noopener" aria-label="Page 56"><img src="reports/dissertation-page-056.png" alt="Page 56" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=57" target="_blank" rel="noopener" aria-label="Page 57"><img src="reports/dissertation-page-057.png" alt="Page 57" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=58" target="_blank" rel="noopener" aria-label="Page 58"><img src="reports/dissertation-page-058.png" alt="Page 58" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=59" target="_blank" rel="noopener" aria-label="Page 59"><img src="reports/dissertation-page-059.png" alt="Page 59" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=60" target="_blank" rel="noopener" aria-label="Page 60"><img src="reports/dissertation-page-060.png" alt="Page 60" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=61" target="_blank" rel="noopener" aria-label="Page 61"><img src="reports/dissertation-page-061.png" alt="Page 61" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=62" target="_blank" rel="noopener" aria-label="Page 62"><img src="reports/dissertation-page-062.png" alt="Page 62" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=63" target="_blank" rel="noopener" aria-label="Page 63"><img src="reports/dissertation-page-063.png" alt="Page 63" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=64" target="_blank" rel="noopener" aria-label="Page 64"><img src="reports/dissertation-page-064.png" alt="Page 64" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=65" target="_blank" rel="noopener" aria-label="Page 65"><img src="reports/dissertation-page-065.png" alt="Page 65" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=66" target="_blank" rel="noopener" aria-label="Page 66"><img src="reports/dissertation-page-066.png" alt="Page 66" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=67" target="_blank" rel="noopener" aria-label="Page 67"><img src="reports/dissertation-page-067.png" alt="Page 67" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=68" target="_blank" rel="noopener" aria-label="Page 68"><img src="reports/dissertation-page-068.png" alt="Page 68" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=69" target="_blank" rel="noopener" aria-label="Page 69"><img src="reports/dissertation-page-069.png" alt="Page 69" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=70" target="_blank" rel="noopener" aria-label="Page 70"><img src="reports/dissertation-page-070.png" alt="Page 70" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=71" target="_blank" rel="noopener" aria-label="Page 71"><img src="reports/dissertation-page-071.png" alt="Page 71" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=72" target="_blank" rel="noopener" aria-label="Page 72"><img src="reports/dissertation-page-072.png" alt="Page 72" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=73" target="_blank" rel="noopener" aria-label="Page 73"><img src="reports/dissertation-page-073.png" alt="Page 73" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=74" target="_blank" rel="noopener" aria-label="Page 74"><img src="reports/dissertation-page-074.png" alt="Page 74" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=75" target="_blank" rel="noopener" aria-label="Page 75"><img src="reports/dissertation-page-075.png" alt="Page 75" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=76" target="_blank" rel="noopener" aria-label="Page 76"><img src="reports/dissertation-page-076.png" alt="Page 76" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=77" target="_blank" rel="noopener" aria-label="Page 77"><img src="reports/dissertation-page-077.png" alt="Page 77" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=78" target="_blank" rel="noopener" aria-label="Page 78"><img src="reports/dissertation-page-078.png" alt="Page 78" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=79" target="_blank" rel="noopener" aria-label="Page 79"><img src="reports/dissertation-page-079.png" alt="Page 79" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=80" target="_blank" rel="noopener" aria-label="Page 80"><img src="reports/dissertation-page-080.png" alt="Page 80" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=81" target="_blank" rel="noopener" aria-label="Page 81"><img src="reports/dissertation-page-081.png" alt="Page 81" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=82" target="_blank" rel="noopener" aria-label="Page 82"><img src="reports/dissertation-page-082.png" alt="Page 82" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=83" target="_blank" rel="noopener" aria-label="Page 83"><img src="reports/dissertation-page-083.png" alt="Page 83" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=84" target="_blank" rel="noopener" aria-label="Page 84"><img src="reports/dissertation-page-084.png" alt="Page 84" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=85" target="_blank" rel="noopener" aria-label="Page 85"><img src="reports/dissertation-page-085.png" alt="Page 85" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=86" target="_blank" rel="noopener" aria-label="Page 86"><img src="reports/dissertation-page-086.png" alt="Page 86" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=87" target="_blank" rel="noopener" aria-label="Page 87"><img src="reports/dissertation-page-087.png" alt="Page 87" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=88" target="_blank" rel="noopener" aria-label="Page 88"><img src="reports/dissertation-page-088.png" alt="Page 88" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=89" target="_blank" rel="noopener" aria-label="Page 89"><img src="reports/dissertation-page-089.png" alt="Page 89" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=90" target="_blank" rel="noopener" aria-label="Page 90"><img src="reports/dissertation-page-090.png" alt="Page 90" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=91" target="_blank" rel="noopener" aria-label="Page 91"><img src="reports/dissertation-page-091.png" alt="Page 91" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=92" target="_blank" rel="noopener" aria-label="Page 92"><img src="reports/dissertation-page-092.png" alt="Page 92" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=93" target="_blank" rel="noopener" aria-label="Page 93"><img src="reports/dissertation-page-093.png" alt="Page 93" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=94" target="_blank" rel="noopener" aria-label="Page 94"><img src="reports/dissertation-page-094.png" alt="Page 94" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=95" target="_blank" rel="noopener" aria-label="Page 95"><img src="reports/dissertation-page-095.png" alt="Page 95" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=96" target="_blank" rel="noopener" aria-label="Page 96"><img src="reports/dissertation-page-096.png" alt="Page 96" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=97" target="_blank" rel="noopener" aria-label="Page 97"><img src="reports/dissertation-page-097.png" alt="Page 97" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=98" target="_blank" rel="noopener" aria-label="Page 98"><img src="reports/dissertation-page-098.png" alt="Page 98" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=99" target="_blank" rel="noopener" aria-label="Page 99"><img src="reports/dissertation-page-099.png" alt="Page 99" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=100" target="_blank" rel="noopener" aria-label="Page 100"><img src="reports/dissertation-page-100.png" alt="Page 100" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=101" target="_blank" rel="noopener" aria-label="Page 101"><img src="reports/dissertation-page-101.png" alt="Page 101" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=102" target="_blank" rel="noopener" aria-label="Page 102"><img src="reports/dissertation-page-102.png" alt="Page 102" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=103" target="_blank" rel="noopener" aria-label="Page 103"><img src="reports/dissertation-page-103.png" alt="Page 103" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=104" target="_blank" rel="noopener" aria-label="Page 104"><img src="reports/dissertation-page-104.png" alt="Page 104" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=105" target="_blank" rel="noopener" aria-label="Page 105"><img src="reports/dissertation-page-105.png" alt="Page 105" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=106" target="_blank" rel="noopener" aria-label="Page 106"><img src="reports/dissertation-page-106.png" alt="Page 106" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=107" target="_blank" rel="noopener" aria-label="Page 107"><img src="reports/dissertation-page-107.png" alt="Page 107" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=108" target="_blank" rel="noopener" aria-label="Page 108"><img src="reports/dissertation-page-108.png" alt="Page 108" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=109" target="_blank" rel="noopener" aria-label="Page 109"><img src="reports/dissertation-page-109.png" alt="Page 109" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=110" target="_blank" rel="noopener" aria-label="Page 110"><img src="reports/dissertation-page-110.png" alt="Page 110" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=111" target="_blank" rel="noopener" aria-label="Page 111"><img src="reports/dissertation-page-111.png" alt="Page 111" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=112" target="_blank" rel="noopener" aria-label="Page 112"><img src="reports/dissertation-page-112.png" alt="Page 112" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=113" target="_blank" rel="noopener" aria-label="Page 113"><img src="reports/dissertation-page-113.png" alt="Page 113" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=114" target="_blank" rel="noopener" aria-label="Page 114"><img src="reports/dissertation-page-114.png" alt="Page 114" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=115" target="_blank" rel="noopener" aria-label="Page 115"><img src="reports/dissertation-page-115.png" alt="Page 115" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=116" target="_blank" rel="noopener" aria-label="Page 116"><img src="reports/dissertation-page-116.png" alt="Page 116" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=117" target="_blank" rel="noopener" aria-label="Page 117"><img src="reports/dissertation-page-117.png" alt="Page 117" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=118" target="_blank" rel="noopener" aria-label="Page 118"><img src="reports/dissertation-page-118.png" alt="Page 118" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=119" target="_blank" rel="noopener" aria-label="Page 119"><img src="reports/dissertation-page-119.png" alt="Page 119" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=120" target="_blank" rel="noopener" aria-label="Page 120"><img src="reports/dissertation-page-120.png" alt="Page 120" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=121" target="_blank" rel="noopener" aria-label="Page 121"><img src="reports/dissertation-page-121.png" alt="Page 121" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=122" target="_blank" rel="noopener" aria-label="Page 122"><img src="reports/dissertation-page-122.png" alt="Page 122" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=123" target="_blank" rel="noopener" aria-label="Page 123"><img src="reports/dissertation-page-123.png" alt="Page 123" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=124" target="_blank" rel="noopener" aria-label="Page 124"><img src="reports/dissertation-page-124.png" alt="Page 124" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=125" target="_blank" rel="noopener" aria-label="Page 125"><img src="reports/dissertation-page-125.png" alt="Page 125" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=126" target="_blank" rel="noopener" aria-label="Page 126"><img src="reports/dissertation-page-126.png" alt="Page 126" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=127" target="_blank" rel="noopener" aria-label="Page 127"><img src="reports/dissertation-page-127.png" alt="Page 127" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=128" target="_blank" rel="noopener" aria-label="Page 128"><img src="reports/dissertation-page-128.png" alt="Page 128" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=129" target="_blank" rel="noopener" aria-label="Page 129"><img src="reports/dissertation-page-129.png" alt="Page 129" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=130" target="_blank" rel="noopener" aria-label="Page 130"><img src="reports/dissertation-page-130.png" alt="Page 130" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=131" target="_blank" rel="noopener" aria-label="Page 131"><img src="reports/dissertation-page-131.png" alt="Page 131" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=132" target="_blank" rel="noopener" aria-label="Page 132"><img src="reports/dissertation-page-132.png" alt="Page 132" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=133" target="_blank" rel="noopener" aria-label="Page 133"><img src="reports/dissertation-page-133.png" alt="Page 133" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=134" target="_blank" rel="noopener" aria-label="Page 134"><img src="reports/dissertation-page-134.png" alt="Page 134" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=135" target="_blank" rel="noopener" aria-label="Page 135"><img src="reports/dissertation-page-135.png" alt="Page 135" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=136" target="_blank" rel="noopener" aria-label="Page 136"><img src="reports/dissertation-page-136.png" alt="Page 136" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=137" target="_blank" rel="noopener" aria-label="Page 137"><img src="reports/dissertation-page-137.png" alt="Page 137" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=138" target="_blank" rel="noopener" aria-label="Page 138"><img src="reports/dissertation-page-138.png" alt="Page 138" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=139" target="_blank" rel="noopener" aria-label="Page 139"><img src="reports/dissertation-page-139.png" alt="Page 139" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=140" target="_blank" rel="noopener" aria-label="Page 140"><img src="reports/dissertation-page-140.png" alt="Page 140" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=141" target="_blank" rel="noopener" aria-label="Page 141"><img src="reports/dissertation-page-141.png" alt="Page 141" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=142" target="_blank" rel="noopener" aria-label="Page 142"><img src="reports/dissertation-page-142.png" alt="Page 142" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=143" target="_blank" rel="noopener" aria-label="Page 143"><img src="reports/dissertation-page-143.png" alt="Page 143" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=144" target="_blank" rel="noopener" aria-label="Page 144"><img src="reports/dissertation-page-144.png" alt="Page 144" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=145" target="_blank" rel="noopener" aria-label="Page 145"><img src="reports/dissertation-page-145.png" alt="Page 145" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=146" target="_blank" rel="noopener" aria-label="Page 146"><img src="reports/dissertation-page-146.png" alt="Page 146" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=147" target="_blank" rel="noopener" aria-label="Page 147"><img src="reports/dissertation-page-147.png" alt="Page 147" loading="lazy" /></a>
+          <a href="publications/Barriers%20to%20Prenatal%20Care%20Amid%20Maternal%20Methamphetamine%20Use%20and%20Congenital%20Syphilis%20Epidemic%20in%20Los%20Angeles%20County%20.pdf#page=148" target="_blank" rel="noopener" aria-label="Page 148"><img src="reports/dissertation-page-148.png" alt="Page 148" loading="lazy" /></a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="lightbox" id="substi-lightbox" role="dialog" aria-modal="true" aria-label="Page viewer">
+    <div class="lightbox-img-wrap">
+      <span class="lightbox-counter" id="lightbox-counter"></span>
+      <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+      <button type="button" class="lightbox-prev" id="lightbox-prev" aria-label="Previous page">&#8592;</button>
+      <button type="button" class="lightbox-next" id="lightbox-next" aria-label="Next page">&#8594;</button>
+      <img class="lightbox-img" id="lightbox-img" alt="" />
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const groups = document.querySelectorAll('.archive-pages.lightbox-trigger');
+      if (!groups.length) return;
+      const overlay = document.getElementById('substi-lightbox');
+      const imgEl = document.getElementById('lightbox-img');
+      const counter = document.getElementById('lightbox-counter');
+      const closeBtn = document.getElementById('lightbox-close');
+      const prevBtn = document.getElementById('lightbox-prev');
+      const nextBtn = document.getElementById('lightbox-next');
+      let items = []; let idx = 0;
+      function show(i) { idx = (i + items.length) % items.length; imgEl.src = items[idx].src; imgEl.alt = items[idx].alt; counter.textContent = (idx + 1) + ' / ' + items.length; }
+      function open(g, s) { items = g; show(s); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function close() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+      groups.forEach(g => { const t = g.querySelectorAll('a'); const arr = Array.from(t).map(a => ({ src: a.querySelector('img').getAttribute('src'), alt: a.querySelector('img').getAttribute('alt') || '' })); t.forEach((a, i) => a.addEventListener('click', e => { e.preventDefault(); open(arr, i); })); });
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', () => show(idx - 1));
+      nextBtn.addEventListener('click', () => show(idx + 1));
+      overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+      document.addEventListener('keydown', e => { if (!overlay.classList.contains('open')) return; if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') show(idx - 1); else if (e.key === 'ArrowRight') show(idx + 1); });
+    })();
+  </script>
+</body>
+
+</html>

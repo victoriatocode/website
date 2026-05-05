@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Double Jeopary Study — Exhibit </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;1,300;1,400&family=Jost:wght@200;300&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/shell.css" />
+  <style>
+    :root {
+      --g1: #bf7d08;
+      --g2: #d49428;
+      --g3: #e8be6a;
+      --g4: #f2d898;
+      --g5: #f9eec8;
+      --ink: #1a1007;
+      --ink50: rgba(26, 16, 7, 0.5);
+      --ink20: rgba(26, 16, 7, 0.2);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .content {
+      background: linear-gradient(155deg, #bf7d08 0%, #d49428 18%, #e8be6a 48%, #f2d898 72%, #f9eec8 100%);
+      background-attachment: fixed;
+      font-family: "Jost", sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    /* ── POSTCARD FLIP ── */
+    .postcard-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 3.5rem 0;
+    }
+
+    .postcard-flip {
+      perspective: 1200px;
+      cursor: pointer;
+      outline: none;
+      max-width: 920px;
+      width: 100%;
+    }
+
+    .postcard-inner {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .postcard-flip.flipped .postcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .postcard-face {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .postcard-front {
+      display: block;
+    }
+
+    .postcard-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: rotateY(180deg);
+    }
+
+    .postcard-face img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .postcard-hint {
+      font-size: 0.52rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink20);
+      display: block;
+      text-align: center;
+      margin-top: 0.55rem;
+      transition: opacity 0.4s;
+    }
+
+    .postcard-flip.flipped .postcard-hint {
+      opacity: 0;
+    }
+
+    /* ── INTRO ── */
+    .exhibit-intro {
+      padding: 3rem 3.5rem 1rem;
+    }
+
+    .exhibit-eyebrow {
+      display: block;
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink50);
+      margin-bottom: 1rem;
+    }
+
+    .exhibit-title {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      line-height: 1.04;
+      color: var(--ink);
+      margin-bottom: 1.2rem;
+    }
+
+    .exhibit-body {
+      font-size: 0.76rem;
+      line-height: 2;
+      color: var(--ink50);
+      letter-spacing: 0.04em;
+    }
+
+    .exhibit-press {
+      padding: 0 3.5rem 2.8rem;
+    }
+
+    .exhibit-press-title,
+    .exhibit-links-title {
+      font-size: 0.58rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--ink50);
+      margin-bottom: 1rem;
+    }
+
+    .exhibit-press-list {
+      list-style: none;
+      border-top: 1px solid var(--ink20);
+    }
+
+    .exhibit-press-list li {
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--ink20);
+      font-size: 0.72rem;
+      line-height: 1.85;
+      color: var(--ink50);
+    }
+
+    .exhibit-press-source {
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink50);
+      margin: 0 0 0.4rem;
+    }
+
+    .exhibit-press-headline {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.1rem;
+      line-height: 1.3;
+      color: var(--ink);
+      margin: 0 0 0.4rem;
+    }
+
+    .exhibit-press-byline {
+      margin: 0;
+    }
+
+    .exhibit-links {
+      padding: 0 3.5rem 3rem;
+    }
+
+    .exhibit-links-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .exhibit-links-list a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink50);
+      padding-bottom: 2px;
+    }
+
+    .exhibit-links-list a:hover {
+      border-bottom-color: var(--ink);
+    }
+
+    /* ── FABRIC STAGE ── */
+    .fabric-stage {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 1rem;
+      padding: 1.5rem 5vw 3.5rem;
+    }
+
+    .panel-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      outline: none;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .panel-unit:hover,
+    .panel-unit:focus-visible {
+      transform: translateY(-12px) scale(1.04);
+    }
+
+    .sheer-wrap {
+      position: relative;
+      width: 100%;
+      transform-origin: top center;
+      animation: drift var(--dur, 9s) ease-in-out var(--delay, 0s) infinite;
+    }
+
+    .sheer-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(255, 255, 255, 0.74) 0%,
+          rgba(255, 255, 255, 0.52) 30%,
+          rgba(255, 255, 255, 0.42) 60%,
+          rgba(255, 255, 255, 0.58) 85%,
+          rgba(255, 255, 255, 0.72) 100%);
+      z-index: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    .panel-unit:hover .sheer-wrap::before,
+    .panel-unit:focus-visible .sheer-wrap::before {
+      opacity: 0.3;
+    }
+
+    .sheer-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      mix-blend-mode: multiply;
+      animation: cloth-wave var(--dur, 9s) ease-in-out var(--delay, 0s) infinite;
+    }
+
+    .floor-shadow {
+      width: 110%;
+      height: 10px;
+      background: radial-gradient(ellipse, rgba(100, 60, 0, 0.10) 0%, transparent 70%);
+      border-radius: 50%;
+      margin-top: 2px;
+      animation: shadow-drift var(--dur, 9s) ease-in-out var(--delay, 0s) infinite;
+    }
+
+    .panel-view-label {
+      font-size: 0.52rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink50);
+      margin-top: 0.55rem;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .panel-unit:hover .panel-view-label,
+    .panel-unit:focus-visible .panel-view-label {
+      opacity: 1;
+    }
+
+    .panel-caption {
+      text-align: center;
+      margin-top: 0.7rem;
+      line-height: 1.5;
+    }
+
+    .panel-caption-name {
+      display: block;
+      font-size: 0.52rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink50);
+    }
+
+    .panel-caption-mat {
+      display: block;
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-size: 0.72rem;
+      color: var(--ink20);
+    }
+
+    @keyframes drift {
+      0% {
+        transform: rotate(-1deg) skewX(0.4deg);
+      }
+
+      33% {
+        transform: rotate(0.3deg) skewX(-0.3deg);
+      }
+
+      66% {
+        transform: rotate(1.2deg) skewX(0.4deg);
+      }
+
+      100% {
+        transform: rotate(-1deg) skewX(0.4deg);
+      }
+    }
+
+    @keyframes cloth-wave {
+
+      0%,
+      50%,
+      100% {
+        clip-path: polygon(2% 0%, 98% 0%, 100% 25%, 98% 55%, 100% 80%, 99% 100%, 0% 100%, 1% 80%, 2% 55%, 0% 25%);
+      }
+
+      25%,
+      75% {
+        clip-path: polygon(0% 0%, 100% 0%, 99% 25%, 100% 55%, 98% 80%, 100% 100%, 1% 100%, 0% 80%, 1% 55%, 2% 25%);
+      }
+    }
+
+    @keyframes shadow-drift {
+      0% {
+        transform: translateX(-5px) scaleX(0.9);
+      }
+
+      50% {
+        transform: translateX(5px) scaleX(1.08);
+      }
+
+      100% {
+        transform: translateX(-5px) scaleX(0.9);
+      }
+    }
+
+    /* ── FILTER BAR ── */
+    .filter-section {
+      display: flex;
+      justify-content: center;
+      padding: 0 3.5rem 2rem;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      background: none;
+      border: none;
+      border-bottom: 1px solid transparent;
+      cursor: pointer;
+      font-family: "Jost", sans-serif;
+      font-weight: 200;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink50);
+      padding: 0 0 3px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .filter-btn:hover {
+      color: rgba(26, 16, 7, 0.75);
+    }
+
+    .filter-btn.active {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
+
+    /* ── NARRATIVE GRID ── */
+    .grid-section {
+      padding: 0 3.5rem 6rem;
+    }
+
+    .narrative-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      padding: 1rem 1.2rem 0.9rem;
+      cursor: pointer;
+      border-bottom: 1px solid var(--ink20);
+      transition: background 0.25s;
+      outline: none;
+    }
+
+    .card:hover,
+    .card:focus-visible {
+      background: rgba(255, 255, 255, 0.10);
+    }
+
+    .card-n {
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink20);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.22;
+      color: var(--ink);
+      margin-bottom: 0.7rem;
+    }
+
+    .card-preview {
+      font-size: 0.72rem;
+      line-height: 1.82;
+      color: var(--ink50);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .exhibit-history {
+      padding: 0 3.5rem 2.8rem;
+    }
+
+    .exhibit-history-title {
+      font-size: 0.58rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--ink50);
+      margin-bottom: 1rem;
+    }
+
+    .exhibit-history-list {
+      list-style: none;
+      border-top: 1px solid var(--ink20);
+    }
+
+    .exhibit-history-list li {
+      padding: 0.95rem 0;
+      border-bottom: 1px solid var(--ink20);
+      font-size: 0.72rem;
+      line-height: 1.85;
+      color: var(--ink50);
+    }
+
+    .exhibit-history-item p {
+      margin: 0 0 0.8rem;
+    }
+
+    .history-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 0.45rem;
+      margin-top: 0.45rem;
+    }
+
+    .history-thumb {
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      border-radius: 4px;
+      overflow: hidden;
+      line-height: 0;
+      outline: none;
+    }
+
+    .history-thumb img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease, filter 0.25s ease;
+      filter: saturate(0.94);
+    }
+
+    .history-thumb:hover img,
+    .history-thumb:focus-visible img {
+      transform: scale(1.08);
+      filter: saturate(1);
+    }
+
+    .photo-lb {
+      position: fixed;
+      inset: 0;
+      z-index: 320;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .photo-lb.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .photo-lb-bg {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 16, 7, 0.82);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      cursor: pointer;
+    }
+
+    .photo-lb-inner {
+      position: relative;
+      z-index: 1;
+      max-width: min(1200px, 92vw);
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .photo-lb-close {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: "Jost", sans-serif;
+      font-weight: 200;
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(249, 238, 200, 0.7);
+      margin-bottom: 0.7rem;
+      transition: color 0.2s;
+    }
+
+    .photo-lb-close:hover {
+      color: #f9eec8;
+    }
+
+    .photo-lb-img {
+      max-width: 92vw;
+      max-height: 80vh;
+      width: auto;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+      box-shadow: 0 20px 65px rgba(0, 0, 0, 0.35);
+    }
+
+    .photo-lb-caption {
+      margin-top: 0.8rem;
+      font-size: 0.56rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(249, 238, 200, 0.6);
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* ── PANEL LIGHTBOX ── */
+    .panel-lb {
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .panel-lb.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .panel-lb-bg {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 16, 7, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      cursor: pointer;
+    }
+
+    .panel-lb-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-height: 94vh;
+      overflow: auto;
+    }
+
+    .panel-lb-close {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: "Jost", sans-serif;
+      font-weight: 200;
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(249, 238, 200, 0.6);
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+
+    .panel-lb-close:hover {
+      color: #f9eec8;
+    }
+
+    .panel-lb-img {
+      height: 228vh;
+      width: auto;
+      max-width: none;
+      display: block;
+    }
+
+    .panel-lb-img.anim {
+      animation: popIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes popIn {
+      from {
+        transform: scale(0.88);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .panel-lb-caption {
+      margin-top: 1.1rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(249, 238, 200, 0.55);
+    }
+
+    /* ── QUOTE LIGHTBOX ── */
+    .quote-lb {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .quote-lb.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .quote-lb-bg {
+      position: absolute;
+      inset: 0;
+      background: rgba(26, 16, 7, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      cursor: pointer;
+    }
+
+    .quote-lb-panel {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(145deg, #f2d898, #f9eec8);
+      border-top: 2px solid rgba(191, 125, 8, 0.25);
+      max-width: 540px;
+      width: 100%;
+      padding: 3rem 2.8rem 2.5rem;
+      transform: translateY(14px);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+
+    .quote-lb.open .quote-lb-panel {
+      transform: translateY(0);
+    }
+
+    .qlb-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: "Jost", sans-serif;
+      font-weight: 200;
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink50);
+      transition: color 0.2s;
+    }
+
+    .qlb-close:hover {
+      color: var(--ink);
+    }
+
+    .qlb-n {
+      font-size: 0.58rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink20);
+      margin-bottom: 0.7rem;
+    }
+
+    .qlb-title {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .qlb-quote {
+      font-family: "Cormorant", serif;
+      font-style: italic;
+      font-size: 1.08rem;
+      line-height: 1.95;
+      color: var(--ink50);
+    }
+
+    .qlb-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--ink20);
+    }
+
+    .qlb-nav button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: "Jost", sans-serif;
+      font-weight: 200;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink50);
+      transition: color 0.2s;
+    }
+
+    .qlb-nav button:hover {
+      color: var(--ink);
+    }
+
+    .qlb-nav button:disabled {
+      opacity: 0.18;
+      cursor: default;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1rem 1rem 1.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink20);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .fabric-stage {
+        gap: 0.5rem;
+        padding: 1rem 3vw 2.5rem;
+      }
+
+      .narrative-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .filter-section,
+      .grid-section,
+      .exhibit-history {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .panel-lb-img {
+        height: 188vh;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .narrative-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fabric-stage {
+        flex-wrap: wrap;
+      }
+
+      .history-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .panel-lb-img {
+        height: 148vh;
+      }
+    }
+  </style>
+  <link rel="icon" href="parklogo.png" type="image/png">
+</head>
+
+<body>
+    <main class="content">
+
+      <section class="postcard-section">
+        <div class="postcard-flip" id="postcard-flip" role="button" tabindex="0" aria-label="Flip postcard to see back">
+          <div class="postcard-inner">
+            <div class="postcard-face postcard-front">
+              <img id="postcard-front-img" src="" alt="Exhibit postcard — front" />
+            </div>
+            <div class="postcard-face postcard-back">
+              <img id="postcard-back-img" src="" alt="Exhibit postcard — back" />
+            </div>
+          </div>
+          <span class="postcard-hint">Click to flip</span>
+        </div>
+      </section>
+
+      <section class="exhibit-intro">
+        <span class="exhibit-eyebrow">Double Jeopardy Study</span>
+        <h1 class="exhibit-title">Voices on Silk</h1>
+        <p class="exhibit-body">Five silk panels. Fifty-eight voices. Each story anonymous. Each story real.</p>
+      </section>
+
+      <section class="fabric-stage" id="fabric-stage"></section>
+
+      <div class="filter-section">
+        <div class="filter-bar" id="filter-bar"></div>
+      </div>
+
+      <div class="grid-section">
+        <div class="narrative-grid" id="narrative-grid"></div>
+      </div>
+
+      <section class="exhibit-history" aria-label="Exhibition history">
+        <h2 class="exhibit-history-title">Exhibition History</h2>
+        <ul class="exhibit-history-list">
+          <li class="exhibit-history-item">
+            <p>2022. Double Jeopardy Transmedia/Photovoice Exhibition, Sexual Violence Research Initiative (SVRI) Forum,
+              Cancun, Mexico, September 19-23, 2022.</p>
+            <div class="history-gallery" id="history-gallery-svri"></div>
+          </li>
+          <li class="exhibit-history-item">
+            <p>2022. Translating Sexual Violence Prevention Research into Action + Double Jeopardy Transmedia Touring
+              Art Exhibition, Annual Center for Gender &amp; Health Justice Retreat, Monterey, CA, September 30-October
+              2, 2022.</p>
+            <div class="history-gallery" id="history-gallery-ucghi"></div>
+          </li>
+          <li class="exhibit-history-item">
+            <p>2023. Clothesline Project + Art Exhibit &amp; Panel Discussion on Sexual Violence Awareness, UCLA, April
+              25, 2023.</p>
+            <div class="history-gallery" id="history-gallery-ucla"></div>
+          </li>
+          <li class="exhibit-history-item">
+            <p>2024. Double Jeopardy Transmedia Touring Art Exhibition and Panel Discussion, Occidental College, Los
+              Angeles, CA, April 26, 2024.</p>
+            <div class="history-gallery" id="history-gallery-oxy"></div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="exhibit-press" aria-label="Press coverage">
+        <h2 class="exhibit-press-title">Press</h2>
+        <ul class="exhibit-press-list">
+          <li>
+            <p class="exhibit-press-source">UC Global Health Institute Newsletter &middot; May 2023</p>
+            <p class="exhibit-press-headline">The Power of Research to Create Dialogue About AAPI Women's Experiences with Sexual Violence</p>
+            <p class="exhibit-press-byline">By Elizabeth Doerr. University of California Global Health Institute Newsletter, May 3, 2023.</p>
+          </li>
+          <li>
+            <p class="exhibit-press-source">NBC News &middot; May 2022</p>
+            <p class="exhibit-press-headline">AAPI Action: 100 Ways AAPI Communities Have Found Solutions to Racism and Violence</p>
+            <p class="exhibit-press-byline">By Angela Yang, Kimmy Yam, Claire Wang, and Brahmjot Kaur. NBC News, May 2, 2022.</p>
+          </li>
+          <li>
+            <p class="exhibit-press-source">LAist / SCPR &middot; May 2021</p>
+            <p class="exhibit-press-headline">"How &mdash; And Why &mdash; Academic Researchers Are Taking On Anti-Asian Hate"</p>
+            <p class="exhibit-press-byline">By Adolfo Guzman-Lopez. LAist &amp; Southern California Public Radio, May 3, 2021.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="exhibit-links" aria-label="Project links">
+        <h2 class="exhibit-links-title">Project Website</h2>
+        <div class="exhibit-links-list">
+          <a href="https://wagmanlab.ph.ucla.edu/project/double-jeopardy-asian-students-experiences-of-sexual-violence-and-xenophobia/" target="_blank" rel="noopener">Wagman Lab Project</a>
+          <a href="https://ucspeaksup.org/djstudy/" target="_blank" rel="noopener">UC Speaks Up</a>
+          <a href="https://www.instagram.com/api.ucspeaksup/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </section>
+
+      <div class="photo-lb" id="photo-lb" role="dialog" aria-modal="true" aria-label="Exhibition photo viewer">
+        <div class="photo-lb-bg" id="photo-lb-bg"></div>
+        <div class="photo-lb-inner">
+          <button class="photo-lb-close" id="photo-lb-close" aria-label="Close photo">Close</button>
+          <img class="photo-lb-img" id="photo-lb-img" src="" alt="" />
+          <p class="photo-lb-caption" id="photo-lb-caption"></p>
+        </div>
+      </div>
+
+      <!-- Panel Lightbox -->
+      <div class="panel-lb" id="panel-lb" role="dialog" aria-modal="true" aria-label="Panel image viewer">
+        <div class="panel-lb-bg" id="panel-lb-bg"></div>
+        <div class="panel-lb-inner">
+          <button class="panel-lb-close" id="panel-lb-close" aria-label="Close panel">Close</button>
+          <img class="panel-lb-img" id="panel-lb-img" src="" alt="" />
+          <p class="panel-lb-caption" id="panel-lb-caption"></p>
+        </div>
+      </div>
+
+      <!-- Quote Lightbox -->
+      <div class="quote-lb" id="quote-lb" role="dialog" aria-modal="true" aria-labelledby="qlb-title-text">
+        <div class="quote-lb-bg" id="quote-lb-bg"></div>
+        <div class="quote-lb-panel">
+          <button class="qlb-close" id="qlb-close" aria-label="Close">Close</button>
+          <div class="qlb-n" id="qlb-n"></div>
+          <h2 class="qlb-title" id="qlb-title-text"></h2>
+          <p class="qlb-quote" id="qlb-quote"></p>
+          <div class="qlb-nav">
+            <button id="qlb-prev">&#8592; Previous</button>
+            <button id="qlb-next">Next &#8594;</button>
+          </div>
+        </div>
+      </div>
+
+      <footer>These stories belong to the people who lived them &nbsp;&middot;&nbsp; Thank you for bearing witness
+      </footer>
+
+    </main><!-- /.content -->
+
+  <script>
+    const IMAGE_FILES = {
+      postcards: {
+        front: "img_exhibit/postcard1.png",
+        back: "img_exhibit/postcard2.png",
+      },
+      panels: {
+        intro: "img_exhibit/intro_40X96_Habotai8mm.png",
+        panel1: "img_exhibit/panel1_40X96_Habotai8mm.png",
+        panel2: "img_exhibit/panel2_40X96_Habotai8mm.png",
+        panel3: "img_exhibit/panel3_40X96_Habotai8mm.png",
+        panel4: "img_exhibit/panel4_40X96_Organza5mm.png",
+        panel5: "img_exhibit/panel5_40X96_Organza5mm.png",
+      },
+      history: {
+        svri: [
+          "img_assets/svri_exhibit1.jpeg",
+          "img_assets/svri_exhibit2.jpeg",
+        ],
+        ucghi: [
+          "img_assets/ucghi1.jpg",
+          "img_assets/ucghi2.jpg",
+          "img_assets/ucghi_group.jpg",
+        ],
+        ucla2023: [
+          "img_assets/clothsline1.jpeg",
+          "img_assets/clothsline2.jpeg",
+          "img_assets/exhibit1.jpeg",
+          "img_assets/exhibit2.jpeg",
+          "img_assets/exhibit3.jpeg",
+          "img_assets/exhibit4.jpeg",
+          "img_assets/exhibit5.jpg",
+          "img_assets/exhibit6.jpg",
+          "img_assets/exhibit7.jpeg",
+          "img_assets/exhibit8.jpeg",
+          "img_assets/exhibitpanel1.jpeg",
+          "img_assets/exhibitpanel2.jpg",
+          "img_assets/exhibitpanel3.jpg",
+          "img_assets/exhibitpanel4.jpeg",
+          "img_assets/exhibitpanel5.jpeg",
+        ],
+        oxy2024: [
+          "img_assets/oxy1.jpeg",
+        ],
+      },
+    };
+
+    document.getElementById("postcard-front-img").src = IMAGE_FILES.postcards.front;
+    document.getElementById("postcard-back-img").src = IMAGE_FILES.postcards.back;
+
+    // ── DATA ──
+    const S = [
+      // PANEL 1 — Habotai 8mm
+      {
+        p: "1", n: "1.I", t: "I want to stay anonymous",
+        q: "It\u2019s hard to get resources and also, like I said, I wanted to stay anonymous. So it was hard to just get resources if you want to stay anonymous."
+      },
+      {
+        p: "1", n: "1.II", t: "I could have\u2026 but didn\u2019t",
+        q: "I wish someone told me like, this was sexual assault and you have full rights to report it. I was scared to report it\u2014I was scared that it wasn\u2019t sexual assault and I was just making a big deal out of it when in reality it was a big deal."
+      },
+      {
+        p: "1", n: "1.III", t: "Change the way I look",
+        q: "I started twisting, changing my hairstyle so that it would be in a bun, which makes it harder for someone to grab from behind. I made sure that I was not alone after dark\u2026 and I carry pepper spray at all times."
+      },
+      {
+        p: "1", n: "1.IV", t: "Am I responsible",
+        q: "He had no one to tell to and he felt like I was the only one that you could talk to and then I was responsible for that. So I felt extremely, extremely guilty that I was responsible for how he was feeling."
+      },
+      {
+        p: "1", n: "1.V", t: "Fear of stalking",
+        q: "He knows who I am, and I\u2019m still in the same place where all of the things between me and him happened. So it was basically on my mind permanently, like every day."
+      },
+      {
+        p: "1", n: "1.VI", t: "Abuse of Power",
+        q: "He called me \u2018my princess,\u2019 and I was just like, no professor would call a student \u2018my princess.\u2019 Especially not a sixty-something year old guy. I was twenty two."
+      },
+      {
+        p: "1", n: "1.VII", t: "A Roller Coaster",
+        q: "They would say stuff to me that was like really, really rude. But then some other days they would just like, praise me. It was kind of this cycle."
+      },
+      {
+        p: "1", n: "1.VIII", t: "Dehumanization",
+        q: "He didn\u2019t see me as a person. He just saw me as a piece of ass. I just felt like actually nothing afterwards."
+      },
+      {
+        p: "1", n: "1.IX", t: "Admitting the assault",
+        q: "It took me a really long time to even be able to admit that like what it was, like, assault. Because I had no clear perception of anything because he was just so manipulative."
+      },
+      {
+        p: "1", n: "1.X", t: "My forever dilemma",
+        q: "It is one of my forever dilemmas as an Asian woman\u2014to navigate between accepting my sexuality versus the fear of being judged or taken advantage of."
+      },
+      {
+        p: "1", n: "1.XI", t: "Family with their own opinion",
+        q: "I kind of wish that my family didn\u2019t influence my decision on that just because they had their own opinion."
+      },
+      {
+        p: "1", n: "1.XII", t: "Academic Prioritization",
+        q: "My academics didn\u2019t suffer. My sleep, my health\u2014my health suffered. But I completed my thesis. Graduated with honors and got a job during that period."
+      },
+
+      // PANEL 2 — Habotai 8mm
+      {
+        p: "2", n: "2.I", t: "Growth",
+        q: "The more you keep it a secret, the more it\u2019s like a burden. I\u2019m treating it as a learning experience, not a burden."
+      },
+      {
+        p: "2", n: "2.II", t: "Expressing my emotions? Hmm\u2026",
+        q: "I think culturally like emotions are just not like a thing, like expressing yourself emotionally. I just don\u2019t think it\u2019s like a big part of East Asian culture, or maybe just the culture that I grew up with."
+      },
+      {
+        p: "2", n: "2.III", t: "You look different",
+        q: "When I got into UCLA, someone said \u2018Of course you got in because you\u2019re Asian.\u2019 I never think like that, but I guess it\u2019s kind of like what I\u2019ve experienced. Like the microaggressions."
+      },
+      {
+        p: "2", n: "2.IV", t: "Incompleteness",
+        q: "I ended up taking three incompletes that quarter after reaching out to the CARE office. Every time I would have an assignment he would be yelling at me and I would have to leave and so I wouldn\u2019t be able to finish that assignment. I\u2019d miss the deadline."
+      },
+      {
+        p: "2", n: "2.V", t: "No consent",
+        q: "He was going to touch my bottom and I did not consent to that. I didn\u2019t want that, and it made me feel really uncomfortable. There\u2019s a culture sometimes in college where guys at parties will just try to touch girls, not knowing whether or not they want it."
+      },
+      {
+        p: "2", n: "2.VI", t: "Being on edge",
+        q: "Frat parties make me more on edge because of the initial experiences with sexual assault. It reinforces those first initial experiences that made me feel dehumanized. Like, it made me feel like I didn\u2019t have any power."
+      },
+      {
+        p: "2", n: "2.VII", t: "Not holding each other accountable",
+        q: "A lot of times, when scandals happen, they\u2019re kind of swept under the rug and not punished. If people know that they won\u2019t really get punished, then they\u2019re more likely to keep doing things and other people will start doing things."
+      },
+      {
+        p: "2", n: "2.VIII", t: "A certain set of rules",
+        q: "It shouldn\u2019t be on us to make sure that people don\u2019t assault us. That should be something that just no one does, but it happens so you have to protect yourself."
+      },
+      {
+        p: "2", n: "2.IX", t: "Nightmares",
+        q: "Almost every night I would have dreams related to him, anxiety, and violation that I felt. I didn\u2019t know how bad it was until I stopped having those dreams."
+      },
+      {
+        p: "2", n: "2.X", t: "Imminent doom",
+        q: "There\u2019s been plenty of times I have a disturbing thought that pops into my head while I\u2019m with someone else. I couldn\u2019t tell you now and I don\u2019t have insight into that, but that\u2019s definitely multiple times."
+      },
+      {
+        p: "2", n: "2.XI", t: "I wish the assaults didn\u2019t happen to me",
+        q: "It made me feel very irritable and very upset because my feelings were being invalidated. I get PTSD from my assaults. It still affects me on a daily basis. Obviously I wish the assaults didn\u2019t happen to me."
+      },
+      {
+        p: "2", n: "2.XII", t: "Fear of Deportation",
+        q: "I think I was just real scared about everything. A part of me was like, I don\u2019t want to get into trouble. I don\u2019t want to get deported. I know it\u2019s silly now, but I was just very scared when I came in."
+      },
+
+      // PANEL 3 — Habotai 8mm
+      {
+        p: "3", n: "3.I", t: "Microaggression\u2026 Okay so?",
+        q: "I didn\u2019t grow up hearing microaggressions. So sometimes I can\u2019t even catch microaggressions that well because I just am like, \u2018okay, so?\u2019"
+      },
+      {
+        p: "3", n: "3.II", t: "Invisible Trauma",
+        q: "It kind of came back up once I came to college and experienced some of these other things. That\u2019s when I started seeing a therapist and talking more about it and realizing, even though it\u2019s something that happened a long time ago, it still affects my reactions to things."
+      },
+      {
+        p: "3", n: "3.III", t: "What the Stereotyping??",
+        q: "\u2018Ah you must really like spicy food\u2019 or \u2018oh you have to, you probably study late into the night, right?\u2019 They just make you feel like they\u2019re being ignorant. They just don\u2019t know what they\u2019re talking about."
+      },
+      {
+        p: "3", n: "3.IV", t: "NO Family Conversation",
+        q: "We were never able to have any conversations about it, really. And I\u2019m not expecting every man in the world to be trauma-informed and know how to respond. You know, we just don\u2019t have a conversation about it."
+      },
+      {
+        p: "3", n: "3.V", t: "Therapy in Context",
+        q: "My therapist be like, \u2018Let\u2019s try something else so that you can express yourself.\u2019 I\u2019m trying to explain, it\u2019s actually wouldn\u2019t be helpful for me to express emotions because that\u2019ll feel uncomfortable. That\u2019s just not how we are as a family."
+      },
+      {
+        p: "3", n: "3.VI", t: "Blamed by Family",
+        q: "I told my mother. I feel like if I tell my father, he would victim-blame me. He\u2019s like keeping contact with my ex."
+      },
+      {
+        p: "3", n: "3.VII", t: "A realization",
+        q: "I kind of slowly realized that it wasn\u2019t really the norm. For there to be yelling like every day, or to feel very scared a lot, or like received those sorts of threats."
+      },
+      {
+        p: "3", n: "3.VIII", t: "Denial",
+        q: "I don\u2019t like it when dad is like that and my mom just kind of like justifies it. \u2018Just have a listen to what he says and then you just obey him.\u2019 I think she is in denial about it."
+      },
+      {
+        p: "3", n: "3.IX", t: "You are a woman\u2026 so?",
+        q: "My mom told me \u2018you\u2019re a woman and you\u2019re also responsible for all these actions that men take in because you broke up with him. It\u2019s going to ruin him for the rest of your life.\u2019"
+      },
+      {
+        p: "3", n: "3.X", t: "Absence of open conversations",
+        q: "Previously I didn\u2019t go to therapy for this because like, this is kind of weird to talk about in general, like even to bring up to my family, let alone a therapist."
+      },
+      {
+        p: "3", n: "3.XI", t: "Shaming",
+        q: "The stigma of sexuality is so heavy that the mental punishment or social pressure really pushed me to a corner. I feel that I might be one of the few that do not belong to the culture."
+      },
+      {
+        p: "3", n: "3.XII", t: "Cycle of Violence",
+        q: "I thought that type of behavior was OK with him growing up and like, I ended up dating people like him, you know, like it\u2019s just not really surprising."
+      },
+
+      // PANEL 4 — Organza 5mm
+      {
+        p: "4", n: "4.I", t: "Anxiety Afterwards",
+        q: "I became very anxious about him. Always, is he going to find me? Is he going to be here? Am I going to run into him somewhere? I didn\u2019t realize how bad it was until I stopped having those dreams."
+      },
+      {
+        p: "4", n: "4.II", t: "I feel like\u2026 a burden",
+        q: "I felt like such a burden on my roommate because she was like seeing me breaking down. I just felt so worthless. I feel like I did not matter to anyone or anything because this guy could do this to me without even thinking about what it would do to me."
+      },
+      {
+        p: "4", n: "4.III", t: "The break down",
+        q: "I would break down a lot. I couldn\u2019t focus on anything, and I stopped eating a lot. I think right after it happened, I didn\u2019t eat for, like, two days before my roommate forced me to eat something."
+      },
+      {
+        p: "4", n: "4.IV", t: "I can\u2019t imagine",
+        q: "Because of intimate partner violence situations, my relationships have become someone I didn\u2019t like. The idea of trusting someone so intensely like that is like, I can\u2019t imagine. I can\u2019t imagine doing it because it\u2019s so scary to think that could happen again."
+      },
+      {
+        p: "4", n: "4.V", t: "Threats",
+        q: "He would text me: \u2018Oh, I feel like I am so unhappy and it\u2019s all your fault because you broke up with me,\u2019 and things like, \u2018I feel like I want to kill myself and it\u2019s all your fault.\u2019"
+      },
+      {
+        p: "4", n: "4.VI", t: "Triggering Sensations",
+        q: "I had developed this like pain. In my mind, I would feel like pain, literally in my clit. It must have just been like some sort of ghost sensation\u2014like when someone loses their arm and they still feel sensation in their fingertips. I still feel pain like a ghost reaction."
+      },
+      {
+        p: "4", n: "4.VII", t: "Fetishizing\u2026 Where are you from?",
+        q: "Someone was like, \u2018oh, where are you from? No, where are you really from?\u2019 And then it got really weird because then he was like, \u2018I could give you a massage sometimes.\u2019"
+      },
+      {
+        p: "4", n: "4.VIII", t: "Asian Fever",
+        q: "They definitely have what they call Asian Fever. Some of them explicitly admitted that they love being with me because I always look like a teenager, even though I am in my early thirties."
+      },
+      {
+        p: "4", n: "4.IX", t: "Body",
+        q: "They were instead of talking about the actual assault, they were talking about how my pubic hair wasn\u2019t shaved enough and I was like, what the fuck?"
+      },
+      {
+        p: "4", n: "4.X", t: "I can\u2019t help but to\u2026",
+        q: "I get men who tell me that: \u2018Well, the reason why I did that to you is because you\u2019re so hot and I can not help it.\u2019"
+      },
+
+      // PANEL 5 — Organza 5mm
+      {
+        p: "5", n: "5.I", t: "Assumed Intelligence",
+        q: "I feel like sometimes the professors or the teachers would think that I would be smarter or like I would get things quicker. When I got an A, it\u2019s like, \u2018oh, well, it\u2019s because you\u2019re Asian\u2019\u2014like that hasn\u2019t been easy for you."
+      },
+      {
+        p: "5", n: "5.II", t: "Different Standards",
+        q: "She basically gave me advice that I should lower the pitch of my voice because then people would take me more seriously. To have someone who looks like you tell you that you need to change it\u2014I hurt a lot."
+      },
+      {
+        p: "5", n: "5.III", t: "You filthy",
+        q: "So we were working at the Grove, and then this guy said to us, \u2018you filthy Asians, you here in Hell.\u2019 And I was so shocked because I\u2019ve never experienced that obvious racism in my life before."
+      },
+      {
+        p: "5", n: "5.IV", t: "Part of me\u2026 the fear",
+        q: "I think I was just real scared about everything. A part of me was also like, I don\u2019t know, I don\u2019t want to get into trouble. I don\u2019t want to get deported. I know it\u2019s silly now, but I was just very scared."
+      },
+      {
+        p: "5", n: "5.V", t: "A wake up call",
+        q: "He shouted, \u2018Oh, coming as an Asian. You brought a virus to this country, you got to get out of here.\u2019 And I realize, oh, I was the only Asian in this line. And nobody said a thing. This told me that was my wake up call."
+      },
+      {
+        p: "5", n: "5.VI", t: "You don\u2019t see me as \u201cAsian\u201d",
+        q: "When I was younger, it would make me kind of mad because growing up biracial, I already didn\u2019t feel like I had a sense of community, like in my either Asian side or my white side, because I still kind of felt different."
+      },
+      {
+        p: "5", n: "5.VII", t: "Where to turn to",
+        q: "I hadn\u2019t formed like really strong connections to anyone yet and I didn\u2019t know where to turn to."
+      },
+      {
+        p: "5", n: "5.VIII", t: "Replaying in my head",
+        q: "I didn\u2019t have anyone to talk to about this and I couldn\u2019t get it out of my head. That\u2019s how it just kept replaying and every time it replayed I would start panicking. I remember his face like so vividly still."
+      },
+      {
+        p: "5", n: "5.IX", t: "Parents don\u2019t understand",
+        q: "As I grew up, I was always sort of doing things alone because, you know, like immigrant parents, they didn\u2019t really understand everything, like mental health issues or things like that. So growing up, I had to deal with things myself."
+      },
+      {
+        p: "5", n: "5.X", t: "To share\u2026 or not to share?",
+        q: "I feel very hesitant to share in life and reach out again. I felt like there was no one I could talk to about it. The issue is such a specific issue."
+      },
+      {
+        p: "5", n: "5.XI", t: "But were you r****?",
+        q: "She did that thing that so many people do. This has happened so many times where people are like, \u2018Oh, but were you raped?\u2019 And I could tell it would have made her upset if I said yes."
+      },
+      {
+        p: "5", n: "5.XII", t: "Fear of letting family know",
+        q: "I feel like if I tell my father he will victim blame me. I\u2019m really close to my parents like everything else in my life, but it\u2019s just like this one thing that we can\u2019t talk about."
+      },
+    ];
+
+    // ── PANEL CONFIG ──
+    const PANEL_WIDTH = 122;
+    const PANELS = [
+      { id: "0", src: IMAGE_FILES.panels.intro, label: "Intro", mat: "40 x 96 inches in Habotai 8mm", w: PANEL_WIDTH, dur: "9s", delay: "0s" },
+      { id: "1", src: IMAGE_FILES.panels.panel1, label: "Panel 1", mat: "40 x 96 inches in Habotai 8mm", w: PANEL_WIDTH, dur: "9s", delay: "0s" },
+      { id: "2", src: IMAGE_FILES.panels.panel2, label: "Panel 2", mat: "40 x 96 inches in Habotai 8mm", w: PANEL_WIDTH, dur: "8s", delay: "1.2s" },
+      { id: "3", src: IMAGE_FILES.panels.panel3, label: "Panel 3", mat: "40 x 96 inches in Habotai 8mm", w: PANEL_WIDTH, dur: "10s", delay: "0.6s" },
+      { id: "4", src: IMAGE_FILES.panels.panel4, label: "Panel 4", mat: "40 x 96 inches in Organza 5mm", w: PANEL_WIDTH, dur: "7.5s", delay: "2.1s" },
+      { id: "5", src: IMAGE_FILES.panels.panel5, label: "Panel 5", mat: "40 x 96 inches in Organza 5mm", w: PANEL_WIDTH, dur: "8.8s", delay: "3.0s" },
+    ];
+
+    // ── BUILD HERO ──
+    const stage = document.getElementById('fabric-stage');
+    PANELS.forEach(p => {
+      const unit = document.createElement('div');
+      unit.className = 'panel-unit';
+      unit.tabIndex = 0;
+      unit.setAttribute('role', 'button');
+      unit.setAttribute('aria-label', 'View ' + p.label);
+      unit.style.width = p.w + 'px';
+      unit.style.setProperty('--dur', p.dur);
+      unit.style.setProperty('--delay', p.delay);
+      unit.innerHTML =
+        '<div class="sheer-wrap"><img src="' + p.src + '" alt="' + p.label + '" loading="lazy" /></div>' +
+        '<div class="floor-shadow"></div>' +
+        '<span class="panel-view-label">View</span>' +
+        '<div class="panel-caption">' +
+        '<span class="panel-caption-name">' + p.label + '</span>' +
+        '<span class="panel-caption-mat">' + p.mat + '</span>' +
+        '</div>';
+      unit.addEventListener('click', () => openPanelLb(p.id));
+      unit.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPanelLb(p.id); }
+      });
+      stage.appendChild(unit);
+    });
+
+    // ── BUILD FILTER BAR ──
+    let activeFilter = 'all';
+    let filteredItems = [];
+    let qLbPos = 0;
+
+    const FILTER_OPTIONS = [
+      { val: 'all', label: 'All' },
+      { val: '1', label: 'Panel 1' },
+      { val: '2', label: 'Panel 2' },
+      { val: '3', label: 'Panel 3' },
+      { val: '4', label: 'Panel 4' },
+      { val: '5', label: 'Panel 5' },
+    ];
+
+    const filterBar = document.getElementById('filter-bar');
+    FILTER_OPTIONS.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn' + (opt.val === 'all' ? ' active' : '');
+      btn.textContent = opt.label;
+      btn.dataset.val = opt.val;
+      btn.addEventListener('click', () => applyFilter(opt.val));
+      filterBar.appendChild(btn);
+    });
+
+    function applyFilter(val) {
+      activeFilter = val;
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.val === val);
+      });
+      document.querySelectorAll('.card').forEach(card => {
+        card.style.display = (val === 'all' || card.dataset.panel === val) ? '' : 'none';
+      });
+      rebuildFilteredItems();
+    }
+
+    function rebuildFilteredItems() {
+      filteredItems = S
+        .map((s, i) => ({ s, i }))
+        .filter(({ s }) => activeFilter === 'all' || s.p === activeFilter);
+    }
+
+    // ── BUILD GRID ──
+    const grid = document.getElementById('narrative-grid');
+    S.forEach((s, i) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.tabIndex = 0;
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-label', 'Read narrative ' + s.n + ': ' + s.t);
+      card.dataset.panel = s.p;
+      card.innerHTML =
+        '<div class="card-n">' + s.n + '</div>' +
+        '<h3 class="card-title">' + s.t + '</h3>' +
+        '<p class="card-preview">' + s.q + '</p>';
+      card.addEventListener('click', () => openQuoteLb(i));
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openQuoteLb(i); }
+      });
+      grid.appendChild(card);
+    });
+
+    rebuildFilteredItems();
+
+    // ── PANEL LIGHTBOX ──
+    const panelLb = document.getElementById('panel-lb');
+    const panelLbImg = document.getElementById('panel-lb-img');
+    const panelLbCap = document.getElementById('panel-lb-caption');
+
+    function openPanelLb(panelId) {
+      const p = PANELS.find(x => x.id === panelId);
+      panelLbImg.src = p.src;
+      panelLbImg.alt = p.label;
+      panelLbCap.textContent = p.label;
+      panelLbImg.classList.remove('anim');
+      void panelLbImg.offsetWidth; // force reflow to restart animation
+      panelLbImg.classList.add('anim');
+      panelLb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('panel-lb-close').focus();
+    }
+
+    function closePanelLb() {
+      panelLb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('panel-lb-close').addEventListener('click', closePanelLb);
+    document.getElementById('panel-lb-bg').addEventListener('click', closePanelLb);
+
+    // ── EXHIBIT HISTORY GALLERIES ──
+    const photoLb = document.getElementById("photo-lb");
+    const photoLbImg = document.getElementById("photo-lb-img");
+    const photoLbCaption = document.getElementById("photo-lb-caption");
+
+    function openPhotoLb(src, caption) {
+      photoLbImg.src = src;
+      photoLbImg.alt = caption;
+      photoLbCaption.textContent = caption;
+      photoLb.classList.add("open");
+      document.body.style.overflow = "hidden";
+      document.getElementById("photo-lb-close").focus();
+    }
+
+    function closePhotoLb() {
+      photoLb.classList.remove("open");
+      photoLbImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    function renderHistoryGallery(containerId, images, label) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      images.forEach((src, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "history-thumb";
+        const caption = label + " Image " + (idx + 1);
+        btn.setAttribute("aria-label", "Open " + caption);
+        btn.innerHTML = '<img src="' + src + '" alt="' + caption + '" loading="lazy" />';
+        btn.addEventListener("click", () => openPhotoLb(src, caption));
+        container.appendChild(btn);
+      });
+    }
+
+    renderHistoryGallery("history-gallery-svri", IMAGE_FILES.history.svri, "SVRI 2022");
+    renderHistoryGallery("history-gallery-ucghi", IMAGE_FILES.history.ucghi, "Center for Gender & Health Justice Retreat 2022");
+    renderHistoryGallery("history-gallery-ucla", IMAGE_FILES.history.ucla2023, "UCLA Exhibition 2023");
+    renderHistoryGallery("history-gallery-oxy", IMAGE_FILES.history.oxy2024, "Occidental College 2024");
+
+    document.getElementById("photo-lb-close").addEventListener("click", closePhotoLb);
+    document.getElementById("photo-lb-bg").addEventListener("click", closePhotoLb);
+
+    // ── QUOTE LIGHTBOX ──
+    const quoteLb = document.getElementById('quote-lb');
+    const qlbN = document.getElementById('qlb-n');
+    const qlbTitle = document.getElementById('qlb-title-text');
+    const qlbQuote = document.getElementById('qlb-quote');
+    const qlbPrev = document.getElementById('qlb-prev');
+    const qlbNext = document.getElementById('qlb-next');
+
+    function renderQuoteLb() {
+      const fc = filteredItems[qLbPos];
+      qlbN.textContent = fc.s.n;
+      qlbTitle.textContent = fc.s.t;
+      qlbQuote.textContent = fc.s.q;
+      qlbPrev.disabled = qLbPos === 0;
+      qlbNext.disabled = qLbPos === filteredItems.length - 1;
+    }
+
+    function openQuoteLb(dataIdx) {
+      const pos = filteredItems.findIndex(fc => fc.i === dataIdx);
+      if (pos === -1) return;
+      qLbPos = pos;
+      renderQuoteLb();
+      quoteLb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('qlb-close').focus();
+    }
+
+    function closeQuoteLb() {
+      quoteLb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('qlb-close').addEventListener('click', closeQuoteLb);
+    document.getElementById('quote-lb-bg').addEventListener('click', closeQuoteLb);
+    qlbPrev.addEventListener('click', () => { if (qLbPos > 0) { qLbPos--; renderQuoteLb(); } });
+    qlbNext.addEventListener('click', () => { if (qLbPos < filteredItems.length - 1) { qLbPos++; renderQuoteLb(); } });
+
+    // ── KEYBOARD ──
+    document.addEventListener('keydown', e => {
+      if (panelLb.classList.contains('open')) {
+        if (e.key === 'Escape') closePanelLb();
+        return;
+      }
+      if (photoLb.classList.contains("open")) {
+        if (e.key === "Escape") closePhotoLb();
+        return;
+      }
+      if (quoteLb.classList.contains('open')) {
+        if (e.key === 'Escape') closeQuoteLb();
+        if (e.key === 'ArrowRight' && qLbPos < filteredItems.length - 1) { qLbPos++; renderQuoteLb(); }
+        if (e.key === 'ArrowLeft' && qLbPos > 0) { qLbPos--; renderQuoteLb(); }
+      }
+    });
+
+    // ── POSTCARD FLIP ──
+    const postcardFlip = document.getElementById('postcard-flip');
+    postcardFlip.addEventListener('click', () => postcardFlip.classList.toggle('flipped'));
+    postcardFlip.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); postcardFlip.classList.toggle('flipped'); }
+    });
+  </script>
+</body>
+
+</html>
